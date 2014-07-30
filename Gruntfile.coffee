@@ -99,7 +99,7 @@ module.exports = (grunt) ->
             pages:
                 options:
                     remote: 'git@github.com:atomantic/atomantic.github.io.git'
-                    branch: 'gh-pages'
+                    branch: 'master'
         
 
 
