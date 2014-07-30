@@ -1,10 +1,8 @@
 
 # Adam Eivy
 
-From the terminal, pop in:
+Choose your own adventure:
 
-  ```yo reveal:slide "Slide Title"```
+<a href="#" class="navigate-right">Code &nbsp; &#9654;</a>
 
-Available options:
-
- ```--markdown --attributes --notes```
+<a href="#" class="navigate-down">Comics &amp; Art &nbsp; &#9660;</a>
