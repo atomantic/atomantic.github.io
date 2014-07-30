@@ -146,3 +146,10 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: #13daec; }
+
+#social a img {
+  border: none;
+  border-radius: 6px;
+  width: 64px; }
+  #social a img:hover {
+    background-color: #69c; }

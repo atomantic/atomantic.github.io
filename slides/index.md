@@ -1,6 +1,14 @@
 
 # Adam Eivy
 
+<div id="social">
+	<a rel="nofollow" accesskey="l" href="http://www.linkedin.com/in/antic" title="antic on LinkedIn"><img src="img/icon/linkedin.svg" alt="Li" /></a>
+	<a rel="nofollow" accesskey="f" href="http://facebook.com/atomantic" title="atomantic on Facebook"><img src="img/icon/facebook.svg" alt="Fb" /></a>
+    <a title="antic on Google+" href="https://plus.google.com/106473830349927971727" accesskey="g" rel="nofollow"><img alt="G+" src="img/icon/google.svg" /></a>
+	<a rel="nofollow" accesskey="t" href="http://twitter.com/antic" title="antic on Twitter"><img src="img/icon/twitter.svg" alt="T" /></a>
+    <a rel="nofollow" accesskey="h" href="http://github.com/atomantic" title="atomantic on github"><img src="img/icon/github.svg" alt="G" /></a>
+</div>
+
 Choose your own adventure:
 
 <a href="#" class="navigate-right">Code &nbsp; &#9654;</a>

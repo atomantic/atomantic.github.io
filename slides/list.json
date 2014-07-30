@@ -1,13 +1,7 @@
 [
     [
     	"index.md",
-    	"comics.md",
-    	{
-    		"filename":"bleeding.md",
-    		"attr":{
-    			"data-background":"/img/2013.halloween.jpg"
-    		}
-    	}
+    	"comics.md"
     ],
     [
     	"code.md"
