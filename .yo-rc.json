@@ -1,0 +1,10 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Adam Eivy",
+    "packageVersion": "0.0.0",
+    "useSass": true,
+    "deployToGithubPages": true,
+    "githubUsername": "atomantic",
+    "githubRepository": "atomantic"
+  }
+}
