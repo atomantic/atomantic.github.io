@@ -59,14 +59,30 @@
 
         <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
         <script src="bower_components/reveal.js/js/reveal.min.js"></script>
+        <!--script src="lib/js/jquery.min.js"></script-->
         <script>
             // Configure Reveal
             // Full list of configuration options available here:
             // https://github.com/hakimel/reveal.js#configuration
+            
             Reveal.initialize({
                 progress: false,
                 history: true,
-
+                mouseWheel: true,
+                previewLinks: true,
+                keyboard: {
+                    13: 'next', // go to the next slide when the ENTER key is pressed
+                    // right
+                    39: function(){
+                        var ind = Reveal.getIndices(); // { h: 0, v: 0 } }
+                        window.location.hash = '#/'+(ind.h+1)+'/'+ind.v;
+                    },
+                    // left
+                    37: function(){
+                        var ind = Reveal.getIndices(); // { h: 0, v: 0 } }
+                        window.location.hash = '#/'+(ind.h-1)+'/'+ind.v;
+                    }
+                },
                 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
                 transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
