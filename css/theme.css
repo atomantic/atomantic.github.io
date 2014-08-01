@@ -176,7 +176,8 @@ body {
     /** Pad the lightbox image */
     margin: auto;
     left: 0;
-    right: 0; }
+    right: 0;
+    max-height: 100%; }
   .lightbox:target {
     /** Show lightbox when it is target */
     display: block;
