@@ -1,10 +1,13 @@
 [
     [
-    	"index.md",
-    	"art.md",
+    	"index.html",
+    	"art.html",
     	"comics.html"
     ],
     [
-    	"code.md"
-    ]
+    	"code.html",
+    	"code.html",
+    	"bodc.html"
+    ],
+    "ascii.html"
 ]
