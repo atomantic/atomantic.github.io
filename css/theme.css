@@ -202,3 +202,13 @@ body {
   line-height: 22px;
   padding: 10px;
   z-index: 20; }
+
+.reveal b.bot {
+  transition: 0.5s;
+  transition-delay: 1s;
+  display: inline-block;
+  transform: rotate(0deg);
+  font-family: serif; }
+
+.reveal .present > h3 b.bot {
+  transform: rotate(-10deg); }
