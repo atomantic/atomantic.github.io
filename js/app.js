@@ -1,4 +1,6 @@
-Reveal.addEventListener( 'ready', function( event ) {
+/*global $,Reveal*/
+Reveal.addEventListener( 'ready', function( /*event*/ ) {
+	'use strict';
      // event.currentSlide, event.indexh, event.indexv
      $('.lightbox_image').click(function(){
      	//$('.slides').css({zoom:1});
