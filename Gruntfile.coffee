@@ -1,4 +1,3 @@
-# Generated on 2014-07-30 using generator-reveal 0.3.7
 module.exports = (grunt) ->
 
     grunt.initConfig
@@ -122,10 +121,23 @@ module.exports = (grunt) ->
             html = grunt.template.process indexTemplate, data:
                 slides:
                     slides
-                section: (slide) ->
+                section: (slide,sectionIndex,subsectionIndex) ->
+                    slideHTML = ''
+                    if typeof slide=='string'
+                        file = 'slides/'+slide
+                    else if slide.filename
+                        file = 'slides/'+slide.filename
+                    if file
+                        slideHTML = grunt.file.read file
                     grunt.template.process sectionTemplate, data:
                         slide:
                             slide
+                        sectionIndex:
+                            sectionIndex
+                        subsectionIndex:
+                            subsectionIndex
+                        html:
+                            slideHTML
             grunt.file.write 'index.html', html
 
     grunt.registerTask 'test',

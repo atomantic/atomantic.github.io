@@ -41,14 +41,14 @@
 
             <div class="slides">
 
-                <% _.forEach(slides, function(slide) { %>
+                <% _.each(slides, function(slide,sectionIndex) { %>
                     <% if (!_.isArray(slide)) { %>
-                        <%= section(slide) %>
+                        <%= section(slide,sectionIndex) %>
                     <% } %>
                     <% if (_.isArray(slide)) { %>
                         <section>
-                            <% _.forEach(slide, function(verticalslide) { %>
-                                <%= section(verticalslide) %>
+                            <% _.each(slide, function(verticalslide,subsectionIndex) { %>
+                                <%= section(verticalslide,sectionIndex,subsectionIndex) %>
                             <% }); %>
                         </section>
                     <% } %>

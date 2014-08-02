@@ -184,12 +184,15 @@ body {
     /** Remove default browser outline style */
     outline: none; }
 
+.reveal .slide-background.present {
+  opacity: .5; }
+
 .reveal pre {
   box-shadow: none; }
 
 .reveal figcaption {
   display: block;
-  position: fixed;
+  position: absolute;
   margin: 0;
   left: 0;
   right: 0;
