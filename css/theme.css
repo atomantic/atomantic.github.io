@@ -183,3 +183,35 @@ body {
     display: block;
     /** Remove default browser outline style */
     outline: none; }
+
+.reveal .slide-background.present {
+  opacity: .5; }
+
+.reveal pre {
+  box-shadow: none; }
+
+.reveal figcaption {
+  display: block;
+  position: absolute;
+  margin: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  background: rgba(0, 0, 0, 0.8);
+  color: #eee;
+  text-align: center;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 10px;
+  z-index: 20; }
+
+.reveal b.bot {
+  transition: 0.5s;
+  transition-delay: 1s;
+  display: inline-block;
+  transform: rotate(0deg);
+  font-family: serif; }
+
+.reveal .present > h3 b.bot {
+  transform: rotate(-10deg); }
