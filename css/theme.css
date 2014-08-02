@@ -188,7 +188,8 @@ body {
   opacity: .5; }
 
 .reveal pre {
-  box-shadow: none; }
+  box-shadow: none;
+  font-size: 12px; }
 
 .reveal figcaption {
   display: block;
