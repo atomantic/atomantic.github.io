@@ -1,50 +1,46 @@
 /*global $,Reveal,hljs,document,window*/
 (function(){
     'use strict';
-var fnNext = function(){
-        // override normal flow of jumping to the first row of the next column
-        // try instead to jump to the same row of the next column (will fall back to latest row)
-        var ind = Reveal.getIndices(), // { h: 0, v: 0 } }
-            //hash = window.location.hash.replace('#/').split('/'),
-            newHash = '#/'+(ind.h+1)+'/'+ind.v;
-        /*
-        // if we are on a lightbox subsection, see if we can go to the next lightbox
-        if(hash.length > 2){
-            var h3 = hash[2]+1,
-                lb = $('[rel='+hash[0]+hash[1]+h3+']');
-            if(lb.length){
-                newHash+='/'+h3;
+        /**
+         * @param direction {number} 1 or -1
+         */
+    var fnNav = function(direction){
+            // override normal flow of jumping to the first row of the next/prev column
+            // try instead to jump to the same row of the next/prev column (will fall back to latest row)
+            var ind = Reveal.getIndices(), // { h: 0, v: 0 } }
+                hash = window.location.hash.replace('#/','').split('/'),
+                $lb;
+            // if we are on a lightbox subsection, see if we can go to the next/prev lightbox
+            if(hash.length > 2){
+                // if we find a next/prev item, click it
+                $lb = $('.lightbox_image[rel='+hash[0]+hash[1]+(Number(hash[2])+direction)+']');
             }
-        }
-        */
-        window.location.hash = newHash;
-    },
-    fnPrev = function(){
-        var ind = Reveal.getIndices(); // { h: 0, v: 0 } }
-            //hash = window.location.hash.replace('#/').split('/'); 
-        window.location.hash = '#/'+(ind.h-1)+'/'+ind.v;
-    };
+            if($lb && $lb.length){
+                window.location.href = $lb.attr('href');
+            }else{
+                window.location.hash = '#/'+(ind.h+direction)+'/'+ind.v;
+            }
+        },
+        fnNext = function(){
+            fnNav(1);
+        },
+        fnPrev = function(){
+            fnNav(-1);
+        };
 
-Reveal.addEventListener( 'ready', function( /*event*/ ) {
-     // event.currentSlide, event.indexh, event.indexv
+    Reveal.addEventListener( 'ready', function( /*event*/ ) {
+         // event.currentSlide, event.indexh, event.indexv
 
-     // grab all lightbox images and throw them in the body (outside of reveal)
-     // so they show full-screen zoomed
-     $('body').prepend($('.lightbox'));//.css({zoom:$('.slides').css('zoom')}));
-     // Lightbox effects for figures:
-     /*
-     $('.lightbox_image').click(function(){
-        var $t = $(this),
-            $img = $t.siblings().filter('[rel='+$t.attr('rel')+']');
-        $img.css({zoom:$('.slides').css('zoom')}).data('origin',$t);
-        $('body').prepend($img);
-     });*/
-     /*
-     $('.lightbox').click(function(){
-        var $t = $(this);
-        $t.data('origin').after($t);
-     });*/
-});
+         // grab all lightbox images and throw them in the body (outside of reveal)
+         // so they show full-screen zoomed
+         $('body').prepend($('.lightbox'));//.css({zoom:$('.slides').css('zoom')}));
+         // Lightbox effects for figures:
+         
+         $('.lightbox').click(function(){
+            // can't put the href on the element or reveal will not allow it to navigate thereafter
+            window.location.href = '#_';
+         });
+    });
 
 
 // Configure Reveal
