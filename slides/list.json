@@ -5,6 +5,7 @@
             "attr":{
                 "data-background":"/img/art/2013.halloween.jpg"
             },
+            "title": "Art",
             "figure_title": "Why Am I Bleeding",
             "caption": "Halloween 2013, Bureau of Drawers Art Show @ Cafe Racer, Seattle",
             "figures":["img/art/2013.halloween.jpg"]
@@ -13,7 +14,7 @@
                 "data-background":"/img/art/Bureau-Vol-D-Eivy,Adam-Drink-and-Draw.jpg"
             },
             "title": "Drink and Draw",
-            "caption": "Bureau of Drawers, Querterly Vol. D",
+            "caption": "Bureau of Drawers, Querterly Vol. D: Jan, 2013",
             "figures":[
                 "/img/art/Bureau-Vol-D-Eivy,Adam-Drink-and-Draw.jpg"
             ]
@@ -22,7 +23,7 @@
                 "data-background":"/img/art/Bureau-Vol-C-Eivy,Adam-Coffee-1x3.jpg"
             },
             "title": "Hipsters Like Coffee",
-            "caption": "Bureau of Drawers, Querterly Vol. C",
+            "caption": "Bureau of Drawers, Querterly Vol. C: Sept, 2012",
             "figures":[
                 "/img/art/Bureau-Vol-C-Eivy,Adam-Coffee-1x3.jpg",
                 "/img/art/Bureau-Vol-C-Eivy,Adam-Coffee-2x3.jpg",
@@ -33,7 +34,7 @@
                 "data-background":"/img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-1x3.jpg"
             },
             "title": "Before the World Ended",
-            "caption": "Bureau of Drawers, Querterly Vol. B",
+            "caption": "Bureau of Drawers, Querterly Vol. B: June, 2012",
             "figures":[
                 "/img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-1x3.jpg",
                 "/img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-2x3.jpg",

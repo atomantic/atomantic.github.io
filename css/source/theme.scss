@@ -61,34 +61,31 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 	border:none;
     border-radius:6px;
     width:64px;
+    height:64px;
     &:hover{
-            background-color:#69c;
+        background-color:#69c;
     }
+}
+.reveal h2 {
+  margin-bottom: 10px;
+}
+.reveal section img {
+  border:none;
 }
 .reveal section .group img {
     margin: 5px 0;
 }
 
-/*************************************
- * Basic lightbox styles. Notice the
- * default 'display' is 'none'.
- */
-
 .lightbox {
-    /** Hide the lightbox */
     display: none;
-
-    /** Apply basic lightbox styling */
-    position: fixed;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    z-index: 25;
     text-align: center;
     top: 0;
     left: 0;
+    right: 0;
 
     img {
-      /** Pad the lightbox image */
       margin:auto;
       left:0;
       right:0;
@@ -96,10 +93,7 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
     }
 
     &:target {
-      /** Show lightbox when it is target */
       display: block;
-
-      /** Remove default browser outline style */
       outline: none;
     }
 }
@@ -116,13 +110,13 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 
 .reveal figcaption {
   display: block;
-  position: absolute;
+  position: relative;
   margin: 0;
   left: 0;
   right: 0;
   bottom: 0;
   width: auto;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.5);
   color: #eee;
   text-align: center;
   font-size: 18px;

@@ -61,47 +61,6 @@
         <script src="bower_components/reveal.js/js/reveal.min.js"></script>
         <script src="lib/js/jquery.min.js"></script>
         <script src="js/app.js"></script>
-        <script>
-            // Configure Reveal
-            // Full list of configuration options available here:
-            // https://github.com/hakimel/reveal.js#configuration
-            
-            Reveal.initialize({
-                progress: false,
-                history: true,
-                mouseWheel: true,
-                previewLinks: true,
-                keyboard: {
-                    13: 'next', // go to the next slide when the ENTER key is pressed
-                    // right
-                    39: function(){
-                        var ind = Reveal.getIndices(); // { h: 0, v: 0 } }
-                        window.location.hash = '#/'+(ind.h+1)+'/'+ind.v;
-                    },
-                    // left
-                    37: function(){
-                        var ind = Reveal.getIndices(); // { h: 0, v: 0 } }
-                        window.location.hash = '#/'+(ind.h-1)+'/'+ind.v;
-                    }
-                },
-                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-                // Optional libraries used to extend on reveal.js
-                dependencies: [
-                    { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                    { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                    { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-                    // { src: 'bower_components/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-                    //{ src: 'bower_components/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-
-                    { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
-                ]
-            });
-        </script>
 
     </body>
 

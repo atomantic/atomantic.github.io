@@ -7,10 +7,10 @@
 	<% if (slide.figures) { %>
         <figure>
 			<% _.each(slide.figures, function(figure,index) { %>
-			<a href="#/<%=sectionIndex%>/<%=subsectionIndex%>/<%=index%>" class="lightbox_image" title="<%= slide.caption %>">
+			<a href="#/<%=sectionIndex%>/<%=subsectionIndex%>/<%=index%>" rel="<%=sectionIndex%><%=subsectionIndex%><%=index%>" class="lightbox_image" title="<%= slide.caption %>">
 				<img src="<%= figure.replace('.jpg','_thumb.jpg') %>" alt="<%= slide.figure_title||slide.title %>" />
 			</a>
-			<a href="#_" class="lightbox" id="/<%=sectionIndex%>/<%=subsectionIndex%>/<%=index%>"><img src="<%= figure %>" /></a>
+			<a href="#_" class="lightbox" rel="<%=sectionIndex%><%=subsectionIndex%><%=index%>" id="/<%=sectionIndex%>/<%=subsectionIndex%>/<%=index%>"><img src="<%= figure %>" /></a>
         	<% }); %>
 		    <figcaption><%= slide.figure_title||slide.title %>
 		    <br />- <%= slide.caption %></figcaption>
