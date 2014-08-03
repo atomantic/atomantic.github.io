@@ -1,4 +1,4 @@
-/*global $,Reveal,hljs,document,window,setTimeout*/
+/*global $,Reveal,hljs,document,window*/
 (function(){
     'use strict';
         /**
@@ -8,11 +8,12 @@
             // override normal flow of jumping to the first row of the next/prev column
             // try instead to jump to the same row of the next/prev column (will fall back to latest row)
             var ind = Reveal.getIndices(), // { h: 0, v: 0 } }
-                hash = window.location.hash.replace('#/','').split('/');
+                hash = window.location.hash.replace('#/','').split('/'),
+                $lb;
             // if we are on a lightbox subsection, see if we can go to the next/prev lightbox
             if(hash.length > 2){
                 // if we find a next/prev item, click it
-                var $lb = $('.lightbox_image[rel='+hash[0]+hash[1]+(Number(hash[2])+direction)+']');
+                $lb = $('.lightbox_image[rel='+hash[0]+hash[1]+(Number(hash[2])+direction)+']');
             }
             if($lb && $lb.length){
                 window.location.href = $lb.attr('href');
