@@ -40,6 +40,11 @@
             // can't put the href on the element or reveal will not allow it to navigate thereafter
             window.location.href = '#_';
          });
+         // make sure swipes pass through the lightbox detection nav
+         Reveal.navigateRight = fnNext;
+         Reveal.navigateLeft = fnPrev;
+         Reveal.navigateUp = fnPrev;
+         Reveal.navigateDown = fnNext;
     });
 
 
@@ -53,7 +58,8 @@ Reveal.initialize({
      mouseWheel: true,
      previewLinks: true,
      keyboard: {
-          13: fnNext, // go to the next slide when the ENTER key is pressed
+          // enter
+          13: fnNext,
           // right
           39: fnNext,
           // left
