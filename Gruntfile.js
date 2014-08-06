@@ -5,14 +5,30 @@ module.exports = function(grunt) {
         options: {
           livereload: true
         },
-        files: ['index.html', 'slides/list.json', 'slides/*.md', 'slides/*.html', 'templates/**', 'js/*.js', 'img/**', 'css/*.css']
+        files: [
+	        'index.html', 
+	        'slides/list.json', 
+	        'slides/*.md', 
+	        'slides/*.html', 
+	        'templates/**', 
+	        'js/*.js', 
+	        'img/**', 
+	        'css/*.css'
+        ]
       },
       index: {
-        files: ['templates/_index.html', 'templates/_section.html', 'slides/list.json'],
+        files: [
+        	'templates/_index.html', 
+        	'templates/_section.html', 
+        	'slides/list.json'
+        ],
         tasks: ['buildIndex']
       },
       jshint: {
-        files: ['js/*.js','Gruntfile.js'],
+        files: [
+        	'Gruntfile.js',
+        	'js/*.js'
+        ],
         tasks: ['jshint']
       },
       sass: {
@@ -49,7 +65,15 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            src: ['slides/**', 'bower_components/**', 'js/**', 'img/**', 'lib/**', 'css/*.css', '*.png'],
+            src: [
+            	'slides/**', 
+            	'bower_components/**', 
+            	'js/**', 
+            	'img/**', 
+            	'lib/**', 
+            	'css/*.css', 
+            	'*.png'
+            ],
             dest: 'dist/'
           }, {
             expand: true,
@@ -108,9 +132,9 @@ module.exports = function(grunt) {
     });
     return grunt.file.write('index.html', html);
   });
-  grunt.registerTask('test', '*Lint* javascript files.', ['jshint']);
-  grunt.registerTask('server', 'Run presentation locally and start watch process (living document).', ['buildIndex', 'sass', 'connect:livereload', 'watch']);
-  grunt.registerTask('dist', 'Save presentation files to *dist* directory.', ['test', 'sass', 'buildIndex', 'copy']);
+  grunt.registerTask('test', '*Lint* js files.', ['jshint']);
+  grunt.registerTask('server', 'Run locally and start watch process (living document).', ['buildIndex', 'sass', 'connect:livereload', 'watch']);
+  grunt.registerTask('dist', 'Save files to *dist* directory.', ['test', 'sass', 'buildIndex', 'copy']);
   grunt.registerTask('deploy', 'Deploy to Github Pages', ['dist', 'buildcontrol']);
-  return grunt.registerTask('default', ['test', 'server']);
+  grunt.registerTask('default', ['test', 'server']);
 };
