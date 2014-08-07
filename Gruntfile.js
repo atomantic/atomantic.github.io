@@ -101,7 +101,7 @@ module.exports = function(grunt) {
 	        // in dist directory
 	        files: [{
 	            src: [
-	                'dist/img/**/*.{png,gif,jpg,svg}',
+	                'dist/img/**/*.{png,gif,jpg}',
 	                'dist/js/*.js',
 	                'dist/css/*.css'
 	            ]
@@ -123,13 +123,21 @@ module.exports = function(grunt) {
       }
     },
     useminPrepare: {
-      html: 'dist/index.html',
-      options: {
-        dest: 'dist/'
+      main: {
+      	src:'dist/index.html'
+      },
+      slides:{
+      	src: 'dist/slides/*.html',
+      	options:{
+      		root: 'dist/'
+      	}
       }
     },
     usemin: {
-      html: 'dist/index.html'
+      html: [
+      	'dist/index.html',
+      	'dist/slides/*.html'
+      ]
     }
   });
   require('load-grunt-tasks')(grunt);
