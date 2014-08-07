@@ -40,6 +40,11 @@
             // can't put the href on the element or reveal will not allow it to navigate thereafter
             window.location.href = '#_';
          });
+         // make sure swipes pass through the lightbox detection nav
+         Reveal.navigateRight = fnNext;
+         Reveal.navigateLeft = fnPrev;
+         Reveal.navigateUp = fnPrev;
+         Reveal.navigateDown = fnNext;
     });
 
 
@@ -53,7 +58,8 @@ Reveal.initialize({
      mouseWheel: true,
      previewLinks: true,
      keyboard: {
-          13: fnNext, // go to the next slide when the ENTER key is pressed
+          // enter
+          13: fnNext,
           // right
           39: fnNext,
           // left
@@ -69,11 +75,11 @@ Reveal.initialize({
           { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
           { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
           // { src: 'bower_components/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
           //{ src: 'bower_components/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 
-          { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
+          //{ src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
      ]
 });
 
