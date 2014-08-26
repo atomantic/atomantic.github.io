@@ -43,7 +43,8 @@
         }
     ],
     [
-    	"code.html"
+    	"code.html",
+    	"dotfiles.html"
     ],
     "ascii.html"
 ]
