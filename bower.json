@@ -2,6 +2,6 @@
   "name": "adam-eivy",
   "version": "0.0.0",
   "dependencies": {
-    "reveal.js": "~2.6.1"
+    "reveal.js": "~2.6.2"
   }
 }
