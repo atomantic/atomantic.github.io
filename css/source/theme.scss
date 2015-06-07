@@ -56,16 +56,6 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 // See ../../bower_components/reveal.js/css/theme/README.md
 // for further explanations on how reveal.js themes work.
 
-
-#social a img {
-	border:none;
-    border-radius:6px;
-    width:64px;
-    height:64px;
-    &:hover{
-        background-color:#69c;
-    }
-}
 .reveal h2 {
   margin-bottom: 10px;
 }
@@ -136,4 +126,33 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 }
 .reveal .present > h3 b.bot {
   transform: rotate(-10deg);
+}
+
+i.fa {
+  font: normal normal normal 14px/1 FontAwesome;
+}
+
+#social {
+  a {
+    display:inline-block;
+
+    img {
+    	border:none;
+        border-radius:6px;
+        width:64px;
+        height:64px;
+        &:hover {
+            background-color:#69c;
+        }
+    }
+  }
+  i {
+    font-size:64px;
+    color: #ccc;
+    &:hover {
+      color: #9cf;
+      text-shadow: 2px 2px #ccc;
+    }
+    &.
+  }
 }

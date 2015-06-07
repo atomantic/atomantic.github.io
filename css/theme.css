@@ -147,14 +147,6 @@ body {
 .reveal .slide-number {
   color: #13daec; }
 
-#social a img {
-  border: none;
-  border-radius: 6px;
-  width: 64px;
-  height: 64px; }
-  #social a img:hover {
-    background-color: #69c; }
-
 .reveal h2 {
   margin-bottom: 10px; }
 
@@ -214,3 +206,22 @@ body {
 
 .reveal .present > h3 b.bot {
   transform: rotate(-10deg); }
+
+i.fa {
+  font: normal normal normal 14px/1 FontAwesome; }
+
+#social a {
+  display: inline-block; }
+  #social a img {
+    border: none;
+    border-radius: 6px;
+    width: 64px;
+    height: 64px; }
+    #social a img:hover {
+      background-color: #69c; }
+#social i {
+  font-size: 64px;
+  color: #ccc; }
+  #social i:hover {
+    color: #9cf;
+    text-shadow: 2px 2px #ccc; }
