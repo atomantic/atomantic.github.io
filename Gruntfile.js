@@ -12,20 +12,20 @@ module.exports = function(grunt) {
           livereload: true
         },
         files: [
-	        'index.html', 
-	        'slides/list.json', 
-	        'slides/*.md', 
-	        'slides/*.html', 
-	        'templates/**', 
-	        'js/*.js', 
-	        'img/**', 
+	        'index.html',
+	        'slides/list.json',
+	        'slides/*.md',
+	        'slides/*.html',
+	        'templates/**',
+	        'js/*.js',
+	        'img/**',
 	        'css/*.css'
         ]
       },
       index: {
         files: [
-        	'templates/_index.html', 
-        	'templates/_section.html', 
+        	'templates/_index.html',
+        	'templates/_section.html',
         	'slides/list.json'
         ],
         tasks: ['buildIndex']
@@ -72,12 +72,12 @@ module.exports = function(grunt) {
           {
             expand: true,
             src: [
-            	'slides/**', 
-            	'bower_components/**', 
-            	'js/**', 
-            	'img/**', 
-            	'lib/**', 
-            	'css/*.css', 
+            	'slides/**',
+            	'bower_components/**',
+            	'js/**',
+            	'img/**',
+            	'lib/**',
+            	'css/*.css',
             	'*.png'
             ],
             dest: 'dist/'
@@ -101,7 +101,7 @@ module.exports = function(grunt) {
 	        // in dist directory
 	        files: [{
 	            src: [
-	                'dist/img/**/*.{png,gif,jpg,svg}',
+	                'dist/img/**/*.{png,gif,jpg}',
 	                'dist/js/*.js',
 	                'dist/css/*.css'
 	            ]
@@ -167,9 +167,9 @@ module.exports = function(grunt) {
 	grunt.registerTask('test', '*Lint* js files.', ['jshint']);
 	grunt.registerTask('dist', 'Save files to *dist* directory.', [
 		'clean',
-		'test', 
+		'test',
 		'sass',
-		'buildIndex', 
+		'buildIndex',
 		'copy',
 		'useminPrepare',
 		'concat',
@@ -180,9 +180,9 @@ module.exports = function(grunt) {
 	]);
 	grunt.registerTask('deploy', 'Deploy to Github Pages', ['dist', 'buildcontrol']);
 	grunt.registerTask('server', 'Run locally and start watch process (living document).', [
-		'buildIndex', 
-		'sass', 
-		'connect:livereload', 
+		'buildIndex',
+		'sass',
+		'connect:livereload',
 		'watch'
 	]);
 	grunt.registerTask('default', ['test', 'server']);
