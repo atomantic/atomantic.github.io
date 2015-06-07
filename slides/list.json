@@ -42,8 +42,9 @@
             ]
         }
     ],
-    [
-    	"code.html"
-    ],
-    "ascii.html"
+    "dotfiles.html",
+    "status.html",
+    "code.html",
+    "resume.html",
+    "contact.html"
 ]
