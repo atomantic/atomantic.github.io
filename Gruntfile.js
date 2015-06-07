@@ -72,10 +72,13 @@ module.exports = function(grunt) {
           {
             expand: true,
             src: [
+              'CNAME',
             	'slides/**',
             	'bower_components/**',
             	'js/**',
+            	'bin/**',
             	'img/**',
+            	'pub/**',
             	'lib/**',
             	'css/*.css',
             	'*.png'
