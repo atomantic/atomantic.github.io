@@ -6,14 +6,16 @@
     	<%= html %>
 	<% if (slide.figures) { %>
         <figure>
+          <div>
 			<% _.each(slide.figures, function(figure,index) { %>
 			<a href="#/<%=sectionIndex%>/<%=subsectionIndex%>/<%=index%>" rel="<%=sectionIndex%><%=subsectionIndex%><%=index%>" class="lightbox_image" title="<%= slide.caption %>">
 				<img src="<%= figure.replace('.jpg','_thumb.jpg') %>" alt="<%= slide.figure_title||slide.title %>" />
 			</a>
 			<a class="lightbox" rel="<%=sectionIndex%><%=subsectionIndex%><%=index%>" id="/<%=sectionIndex%>/<%=subsectionIndex%>/<%=index%>"><img src="<%= figure %>" /></a>
         	<% }); %>
+          </div>
 		    <figcaption><%= slide.figure_title||slide.title %>
-		    <br />- <%= slide.caption %></figcaption>
+		    <br /><%= slide.caption %></figcaption>
 		</figure>
 	<% } %>
     </section>

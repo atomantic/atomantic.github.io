@@ -56,14 +56,62 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 // See ../../bower_components/reveal.js/css/theme/README.md
 // for further explanations on how reveal.js themes work.
 
-.reveal h2 {
-  margin-bottom: 10px;
-}
-.reveal section img {
-  border:none;
-}
-.reveal section .group img {
-    margin: 5px 0;
+.reveal {
+  b.bot {
+    transition: 0.5s;
+    transition-delay: 1s;
+    display:inline-block;
+    transform: rotate(0deg);
+    font-family:serif;
+    color:#000;
+  }
+  .present > h3 b.bot {
+    transform: rotate(-10deg);
+  }
+  figure {
+    >div {
+      max-width: 60%;
+      margin:0 auto 5px auto;
+      a {
+        display:inline-block;
+        img {
+          margin:0;
+        }
+      }
+    }
+  }
+  figcaption {
+    display: block;
+    position: relative;
+    margin: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    background: rgba(0,0,0,0.5);
+    color: #eee;
+    text-align: center;
+    padding: 10px;
+    z-index: 20;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  pre {
+    box-shadow:none;
+    font-size:12px;
+  }
+  section {
+    img {
+      border:none;
+    }
+    .group img {
+      margin: 5px 0;
+    }
+  }
+  .slide-background.present {
+    opacity:.5;
+  }
 }
 
 .lightbox {
@@ -74,12 +122,16 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
     top: 0;
     left: 0;
     right: 0;
-
+    bottom: 0;
     img {
       margin:auto;
+      position: absolute;
+      top: 0;
       left:0;
       right:0;
+      bottom: 0;
       max-height:100%;
+      max-width:100%;
     }
 
     &:target {
@@ -89,49 +141,11 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
     }
 }
 
-.reveal .slide-background.present {
-  opacity:.5;
-}
-
-.reveal pre {
-  box-shadow:none;
-  font-size:12px;
-}
-
-
-.reveal figcaption {
-  display: block;
-  position: relative;
-  margin: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: auto;
-  background: rgba(0,0,0,0.5);
-  color: #eee;
-  text-align: center;
-  padding: 10px;
-  z-index: 20;
-}
-
-
-.reveal b.bot {
-  transition: 0.5s;
-  transition-delay: 1s;
-  display:inline-block;
-  transform: rotate(0deg);
-  font-family:serif;
-  color:#000;
-}
-.reveal .present > h3 b.bot {
-  transform: rotate(-10deg);
-}
-
 i.fa {
   font: normal normal normal 14px/1 FontAwesome;
 }
 
-#social {
+.social {
   a {
     display:inline-block;
     margin: 0 5px;
@@ -160,4 +174,8 @@ i.fa {
       font-size:56px;
     }
   }
+}
+
+i.navBtn {
+  font-size:40px;
 }
