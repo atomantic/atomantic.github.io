@@ -15,7 +15,7 @@
 
                 var xhr = new XMLHttpRequest(),
                     url = section.getAttribute('data-html'),
-                    cb = function () {
+                    cb = function() {
                         if (xhr.readyState === 4) {
                             if (
                                 (xhr.status >= 200 && xhr.status < 300) ||
