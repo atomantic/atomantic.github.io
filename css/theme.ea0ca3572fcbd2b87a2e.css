@@ -147,40 +147,22 @@ body {
 .reveal .slide-number {
   color: #13daec; }
 
-.reveal h2 {
-  margin-bottom: 10px; }
-
-.reveal section img {
-  border: none; }
-
-.reveal section .group img {
-  margin: 5px 0; }
-
-.lightbox {
-  display: none;
-  position: absolute;
-  z-index: 25;
-  text-align: center;
-  top: 0;
-  left: 0;
-  right: 0; }
-  .lightbox img {
-    margin: auto;
-    left: 0;
-    right: 0;
-    max-height: 100%; }
-  .lightbox:target {
-    display: block;
-    height: 100%;
-    outline: none; }
-
-.reveal .slide-background.present {
-  opacity: .5; }
-
-.reveal pre {
-  box-shadow: none;
-  font-size: 12px; }
-
+.reveal b.bot {
+  transition: 0.5s;
+  transition-delay: 1s;
+  display: inline-block;
+  transform: rotate(0deg);
+  font-family: serif;
+  color: #000; }
+.reveal .present > h3 b.bot {
+  transform: rotate(-10deg); }
+.reveal figure > div {
+  max-width: 60%;
+  margin: 0 auto 5px auto; }
+  .reveal figure > div a {
+    display: inline-block; }
+    .reveal figure > div a img {
+      margin: 0; }
 .reveal figcaption {
   display: block;
   position: relative;
@@ -194,40 +176,66 @@ body {
   text-align: center;
   padding: 10px;
   z-index: 20; }
+.reveal h2 {
+  margin-bottom: 10px; }
+.reveal pre {
+  box-shadow: none;
+  font-size: 12px; }
+.reveal section img {
+  border: none; }
+.reveal section .group img {
+  margin: 5px 0; }
+.reveal .slide-background.present {
+  opacity: .5; }
 
-.reveal b.bot {
-  transition: 0.5s;
-  transition-delay: 1s;
-  display: inline-block;
-  transform: rotate(0deg);
-  font-family: serif;
-  color: #000; }
-
-.reveal .present > h3 b.bot {
-  transform: rotate(-10deg); }
+.lightbox {
+  display: none;
+  position: absolute;
+  z-index: 25;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+  .lightbox img {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 100%;
+    max-width: 100%; }
+  .lightbox:target {
+    display: block;
+    height: 100%;
+    outline: none; }
 
 i.fa {
   font: normal normal normal 14px/1 FontAwesome; }
 
-#social a {
+.social a {
   display: inline-block;
   margin: 0 5px; }
-  #social a img {
+  .social a img {
     border: none;
     border-radius: 6px;
     width: 64px;
     height: 64px; }
-    #social a img:hover {
+    .social a img:hover {
       background-color: #69c; }
-#social i {
+.social i {
   font-size: 64px;
   color: #13daec;
   opacity: 0.8; }
-  #social i:hover {
+  .social i:hover {
     opacity: 1;
     color: #71e9f4;
     text-shadow: 2px 2px #333; }
-  #social i.fa-deviantart {
+  .social i.fa-deviantart {
     padding: 8px 10px;
     border-radius: 8px;
     font-size: 56px; }
+
+i.navBtn {
+  font-size: 40px; }
