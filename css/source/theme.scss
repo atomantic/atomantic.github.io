@@ -123,6 +123,7 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
   display:inline-block;
   transform: rotate(0deg);
   font-family:serif;
+  color:#000;
 }
 .reveal .present > h3 b.bot {
   transform: rotate(-10deg);
@@ -148,10 +149,12 @@ i.fa {
   }
   i {
     font-size:64px;
-    color: #ccc;
+    color: #13daec;
+    opacity:0.8;
     &:hover {
-      color: #13daec;
-      text-shadow: 2px 2px #036;
+      opacity:1;
+      color: #71e9f4;
+      text-shadow: 2px 2px #333;
     }
     &.fa-deviantart {
       padding:8px 10px;
