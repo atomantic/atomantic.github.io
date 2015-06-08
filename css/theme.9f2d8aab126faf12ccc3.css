@@ -202,7 +202,8 @@ body {
   transition-delay: 1s;
   display: inline-block;
   transform: rotate(0deg);
-  font-family: serif; }
+  font-family: serif;
+  color: #000; }
 
 .reveal .present > h3 b.bot {
   transform: rotate(-10deg); }
@@ -221,10 +222,12 @@ i.fa {
       background-color: #69c; }
 #social i {
   font-size: 64px;
-  color: #ccc; }
+  color: #13daec;
+  opacity: 0.8; }
   #social i:hover {
-    color: #13daec;
-    text-shadow: 2px 2px #036; }
+    opacity: 1;
+    color: #71e9f4;
+    text-shadow: 2px 2px #333; }
   #social i.fa-deviantart {
     padding: 8px 10px;
     border-radius: 8px;
