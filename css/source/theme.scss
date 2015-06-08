@@ -150,9 +150,13 @@ i.fa {
     font-size:64px;
     color: #ccc;
     &:hover {
-      color: #9cf;
-      text-shadow: 2px 2px #ccc;
+      color: #13daec;
+      text-shadow: 2px 2px #036;
     }
-    &.
+    &.fa-deviantart {
+      padding:8px 10px;
+      border-radius: 8px;
+      font-size:56px;
+    }
   }
 }
