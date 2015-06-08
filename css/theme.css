@@ -192,8 +192,6 @@ body {
   background: rgba(0, 0, 0, 0.5);
   color: #eee;
   text-align: center;
-  font-size: 18px;
-  line-height: 22px;
   padding: 10px;
   z-index: 20; }
 
@@ -212,7 +210,8 @@ i.fa {
   font: normal normal normal 14px/1 FontAwesome; }
 
 #social a {
-  display: inline-block; }
+  display: inline-block;
+  margin: 0 5px; }
   #social a img {
     border: none;
     border-radius: 6px;
