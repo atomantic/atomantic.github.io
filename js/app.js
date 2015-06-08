@@ -1,4 +1,4 @@
-/*global $,Reveal,document,window*/
+/*global Reveal,document,window*/
 (function() {
     'use strict';
     var fnNav = function(direction) {
@@ -10,10 +10,10 @@
             // if we are on a lightbox subsection, see if we can go to the next/prev lightbox
             if(hash.length > 2) {
                 // if we find a next/prev item, click it
-                $lb = $('.lightbox_image[rel='+hash[0]+hash[1]+(Number(hash[2])+direction)+']');
+                $lb = document.querySelectorAll('.lightbox_image[rel="'+hash[0]+hash[1]+(Number(hash[2])+direction)+'"]');
             }
             if($lb && $lb.length) {
-                window.location.href = $lb.attr('href');
+                window.location.href = $lb[0].getAttribute('href');
             }else {
                 window.location.hash = '#/'+(ind.h+direction)+'/'+ind.v;
             }
@@ -27,15 +27,17 @@
 
     Reveal.addEventListener( 'ready', function( /*event*/ ) {
         // event.currentSlide, event.indexh, event.indexv
-
+        var $body = document.querySelector('body');
         // grab all lightbox images and throw them in the body (outside of reveal)
         // so they show full-screen zoomed
-        $('body').prepend($('.lightbox')); // .css({zoom:$('.slides').css('zoom')}));
-         // Lightbox effects for figures:
-
-        $('.lightbox').click(function() {
-            // can't put the href on the element or reveal will not allow it to navigate thereafter
-            window.location.href = '#_';
+        var $lbs = document.querySelectorAll('.lightbox');
+        [].forEach.call($lbs, function (item) {
+            $body.insertBefore(item, $body.firstChild); // .css({zoom:$('.slides').css('zoom')}));
+            // make sure we can click to close
+            item.addEventListener('click', function() {
+                // can't put the href on the element or reveal will not allow it to navigate thereafter
+                window.location.href = '#_';
+            });
         });
         // make sure swipes pass through the lightbox detection nav
         Reveal.navigateRight = fnNext;

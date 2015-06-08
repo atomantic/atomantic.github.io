@@ -157,7 +157,7 @@ body {
 .reveal .present > h3 b.bot {
   transform: rotate(-10deg); }
 .reveal figure > div {
-  max-width: 60%;
+  max-width: 75%;
   margin: 0 auto 5px auto; }
   .reveal figure > div a {
     display: inline-block; }

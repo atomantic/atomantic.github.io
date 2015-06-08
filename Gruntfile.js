@@ -1,39 +1,39 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-  	clean: {
-	    // clean:release removes generated files
-	    dist: [
-	        'dist'
-	    ]
-	},
+    clean: {
+      // clean:release removes generated files
+      dist: [
+          'dist'
+      ]
+  },
     watch: {
       livereload: {
         options: {
           livereload: true
         },
         files: [
-	        'index.html',
-	        'slides/list.json',
-	        'slides/*.md',
-	        'slides/*.html',
-	        'templates/**',
-	        'js/*.js',
-	        'img/**',
-	        'css/*.css'
+          'index.html',
+          'slides/list.json',
+          'slides/*.md',
+          'slides/*.html',
+          'templates/**',
+          'js/*.js',
+          'img/**',
+          'css/*.css'
         ]
       },
       index: {
         files: [
-        	'templates/_index.html',
-        	'templates/_section.html',
-        	'slides/list.json'
+          'templates/_index.html',
+          'templates/_section.html',
+          'slides/list.json'
         ],
         tasks: ['buildIndex']
       },
       jshint: {
         files: [
-        	'Gruntfile.js',
-        	'js/*.js'
+          'Gruntfile.js',
+          'js/*.js'
         ],
         tasks: ['jshint']
       },
@@ -73,15 +73,15 @@ module.exports = function(grunt) {
             expand: true,
             src: [
               'CNAME',
-            	'slides/**',
-            	'bower_components/**',
-            	'js/**',
-            	'bin/**',
-            	'img/**',
-            	'pub/**',
-            	'lib/**',
-            	'css/*.css',
-            	'*.png'
+              'slides/**',
+              'bower_components/**',
+              'js/**',
+              'bin/**',
+              'img/**',
+              'pub/**',
+              'lib/**',
+              'css/*.css',
+              '*.png'
             ],
             dest: 'dist/'
           }, {
@@ -94,23 +94,23 @@ module.exports = function(grunt) {
       }
     },
     filerev: {
-	    options: {
-	        encoding: 'utf8',
-	        algorithm: 'md5',
-	        length: 20
-	    },
-	    release: {
-	        // filerev:release hashes(md5) all assets (images, js and css )
-	        // in dist directory
-	        files: [{
-	            src: [
-	                'dist/img/**/*.{png,jpg}',
-	                'dist/js/*.js',
-	                'dist/css/*.css'
-	            ]
-	        }]
-	    }
-	},
+      options: {
+          encoding: 'utf8',
+          algorithm: 'md5',
+          length: 20
+      },
+      release: {
+          // filerev:release hashes(md5) all assets (images, js and css )
+          // in dist directory
+          files: [{
+              src: [
+                  'dist/img/**/*.{png,jpg}',
+                  'dist/js/*.js',
+                  'dist/css/*.css'
+              ]
+          }]
+      }
+  },
     buildcontrol: {
       options: {
         dir: 'dist',
@@ -167,26 +167,26 @@ module.exports = function(grunt) {
     return grunt.file.write('index.html', html);
   });
 
-	grunt.registerTask('test', '*Lint* js files.', ['jshint']);
-	grunt.registerTask('dist', 'Save files to *dist* directory.', [
-		'clean',
-		'test',
-		'sass',
-		'buildIndex',
-		'copy',
-		'useminPrepare',
-		'concat',
-		'cssmin',
-		'uglify',
-		'filerev',
-		'usemin'
-	]);
-	grunt.registerTask('deploy', 'Deploy to Github Pages', ['dist', 'buildcontrol']);
-	grunt.registerTask('server', 'Run locally and start watch process (living document).', [
-		'buildIndex',
-		'sass',
-		'connect:livereload',
-		'watch'
-	]);
-	grunt.registerTask('default', ['test', 'server']);
+  grunt.registerTask('test', '*Lint* js files.', ['jshint']);
+  grunt.registerTask('dist', 'Save files to *dist* directory.', [
+    'clean',
+    'test',
+    'sass',
+    'buildIndex',
+    'copy',
+    'useminPrepare',
+    'concat',
+    'cssmin',
+    'uglify',
+    'filerev',
+    'usemin'
+  ]);
+  grunt.registerTask('deploy', 'Deploy to Github Pages', ['dist', 'buildcontrol']);
+  grunt.registerTask('server', 'Run locally and start watch process (living document).', [
+    'buildIndex',
+    'sass',
+    'connect:livereload',
+    'watch'
+  ]);
+  grunt.registerTask('default', ['test', 'server']);
 };
