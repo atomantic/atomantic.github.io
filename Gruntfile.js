@@ -1,11 +1,33 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
+  'use strict';
   grunt.initConfig({
     clean: {
       // clean:release removes generated files
       dist: [
-          'dist'
+        'dist'
       ]
-  },
+    },
+    appcache: {
+        options: {
+            basePath: 'dist'
+        },
+        all: {
+            dest: 'dist/main.appcache',
+            cache: {
+                patterns: [
+                  'dist/**/*',
+                  '!dist/main.appcache',
+                  '!dist/bower_components/**/*',
+                  '!dist/**/.DS_Store',
+                  '!dist/lib/font/league_gothic_license',
+                  '!dist/lib/js/head.min.js',
+                  'dist/bower_components/reveal.js/css/print/pdf.css'
+                ],
+                literals: '/'            // insert '/' as is in the "CACHE:" section
+            },
+            network: '*'
+        }
+      },
     watch: {
       livereload: {
         options: {
@@ -68,49 +90,47 @@ module.exports = function(grunt) {
     },
     copy: {
       dist: {
-        files: [
-          {
-            expand: true,
-            src: [
-              'CNAME',
-              'slides/**',
-              'bower_components/**',
-              'js/**',
-              'bin/**',
-              'img/**',
-              'pub/**',
-              'lib/**',
-              'css/*.css',
-              '*.png'
-            ],
-            dest: 'dist/'
-          }, {
-            expand: true,
-            src: ['index.html'],
-            dest: 'dist/',
-            filter: 'isFile'
-          }
-        ]
+        files: [{
+          expand: true,
+          src: [
+            'CNAME',
+            'slides/**',
+            'bower_components/**',
+            'js/**',
+            'bin/**',
+            'img/**',
+            'pub/**',
+            'lib/**',
+            'css/*.css',
+            '*.png'
+          ],
+          dest: 'dist/'
+        }, {
+          expand: true,
+          src: ['index.html'],
+          dest: 'dist/',
+          filter: 'isFile'
+        }]
       }
     },
     filerev: {
       options: {
-          encoding: 'utf8',
-          algorithm: 'md5',
-          length: 20
+        encoding: 'utf8',
+        algorithm: 'md5',
+        length: 20
       },
       release: {
-          // filerev:release hashes(md5) all assets (images, js and css )
-          // in dist directory
-          files: [{
-              src: [
-                  'dist/img/**/*.{png,jpg}',
-                  'dist/js/*.js',
-                  'dist/css/*.css'
-              ]
-          }]
+        // filerev:release hashes(md5) all assets (images, js and css )
+        // in dist directory
+        files: [{
+          src: [
+            'dist/img/**/*.{png,jpg}',
+            'dist/js/*.js',
+            'dist/css/*.css'
+          ]
+        }]
       }
-  },
+    },
     buildcontrol: {
       options: {
         dir: 'dist',
@@ -134,7 +154,7 @@ module.exports = function(grunt) {
   });
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('buildIndex', 'Build index.html from templates/_index.html and slides/list.json.', function() {
+  grunt.registerTask('buildIndex', 'Build index.html from templates/_index.html and slides/list.json.', function () {
     var html, indexTemplate, sectionTemplate, slides;
     indexTemplate = grunt.file.read('templates/_index.html');
     sectionTemplate = grunt.file.read('templates/_section.html');
@@ -142,7 +162,7 @@ module.exports = function(grunt) {
     html = grunt.template.process(indexTemplate, {
       data: {
         slides: slides,
-        section: function(slide, sectionIndex, subsectionIndex) {
+        section: function (slide, sectionIndex, subsectionIndex) {
           var file, slideHTML;
           slideHTML = '';
           if (typeof slide === 'string') {
@@ -181,7 +201,7 @@ module.exports = function(grunt) {
     'filerev',
     'usemin'
   ]);
-  grunt.registerTask('deploy', 'Deploy to Github Pages', ['dist', 'buildcontrol']);
+  grunt.registerTask('deploy', 'Deploy to Github Pages', ['dist', 'appcache', 'buildcontrol']);
   grunt.registerTask('server', 'Run locally and start watch process (living document).', [
     'buildIndex',
     'sass',
@@ -189,4 +209,6 @@ module.exports = function(grunt) {
     'watch'
   ]);
   grunt.registerTask('default', ['test', 'server']);
+
+  grunt.registerTask('cache', ['appcache']);
 };
