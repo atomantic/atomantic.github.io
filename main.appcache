@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# rev 1 - 2015-06-17T23:41:04.030Z
+# rev 1 - 2015-06-19T15:02:50.636Z
 
 CACHE:
 CNAME
@@ -19,7 +19,7 @@ img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-2x3_thumb.e0ac84c75e2786ff
 img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-3x3.cc35c40bbd33859baafe.jpg
 img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-3x3_thumb.74b9e69ce36475d92cbd.jpg
 img/art/Bureau-Vol-C-Eivy,Adam-Coffee-1x3.3d7c23d1adfd0fb8bba7.jpg
-img/art/Bureau-Vol-C-Eivy,Adam-Coffee-1x3_thumb.dd839c320e5d89c4d016.jpg
+img/art/Bureau-Vol-C-Eivy,Adam-Coffee-1x3_thumb.206d12a892dcb364c881.jpg
 img/art/Bureau-Vol-C-Eivy,Adam-Coffee-2x3.4e1b6b16491d037c6e5a.jpg
 img/art/Bureau-Vol-C-Eivy,Adam-Coffee-2x3_thumb.855c2499e59c56ea49a9.jpg
 img/art/Bureau-Vol-C-Eivy,Adam-Coffee-3x3.ad7c5fc5da1872327a1d.jpg
@@ -35,9 +35,9 @@ img/art/Card-D4_thumb.c43de77ca5b7d2339279.jpg
 img/art/Card-H7.ac97a1aa00577c48e7c6.jpg
 img/art/Card-H7_thumb.50e2186cab3883c9fbf2.jpg
 img/art/Card-J2.6b5c41b41f392845437f.jpg
-img/art/Card-J2_thumb.970513b6ade81a390c3f.jpg
+img/art/Card-J2_thumb.70f66860ec8a1e94dffd.jpg
 img/art/Card-S10.1dca9b4912dae6b854c1.jpg
-img/art/Card-S10_thumb.3cb83fb3a844569627dc.jpg
+img/art/Card-S10_thumb.e10071e97465d1a46d3b.jpg
 img/code/dotfiles_repeat.gif
 img/icon/facebook.svg
 img/icon/github.svg
@@ -55,6 +55,7 @@ lib/font/league_gothic-webfont.ttf
 lib/font/league_gothic-webfont.woff
 lib/js/classList.js
 lib/js/html5shiv.js
+pinterest-8184f.html
 pub/antic.pub
 pub/atomantic.asc
 slides/art.html
