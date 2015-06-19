@@ -20,6 +20,7 @@ module.exports = function (grunt) {
                   '!dist/slides/**/*',
                   '!dist/bin/**/*',
                   '!dist/CNAME',
+                  '!dist/pinterest-8184f.html',
                   '!dist/main.appcache',
                   '!dist/bower_components/**/*',
                   '!dist/**/.DS_Store',
