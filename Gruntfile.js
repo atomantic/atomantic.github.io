@@ -110,6 +110,11 @@ module.exports = function (grunt) {
           src: ['index.html'],
           dest: 'dist/',
           filter: 'isFile'
+        }, {
+          expand: true,
+          src: ['pinterest-8184f.html'],
+          dest: 'dist/',
+          filter: 'isFile'
         }]
       }
     },
