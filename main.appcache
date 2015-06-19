@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# rev 1 - 2015-06-19T22:35:25.745Z
+# rev 1 - 2015-06-19T22:36:38.684Z
 
 CACHE:
 apple-touch-icon.png
@@ -11,13 +11,13 @@ img/art/2013.halloween_thumb.71217b4095e1f2ba6756.jpg
 img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-1x3.1e1bcf11db37ba9539c5.jpg
 img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-1x3_thumb.5b6ae77629623114b862.jpg
 img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-2x3.1ffa08e62b2e94009f70.jpg
-img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-2x3_thumb.db712ded0ac52dc01800.jpg
+img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-2x3_thumb.54dd7c60cb5e08e5e167.jpg
 img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-3x3.cc35c40bbd33859baafe.jpg
 img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-3x3_thumb.74b9e69ce36475d92cbd.jpg
 img/art/Bureau-Vol-C-Eivy,Adam-Coffee-1x3.3d7c23d1adfd0fb8bba7.jpg
 img/art/Bureau-Vol-C-Eivy,Adam-Coffee-1x3_thumb.dd839c320e5d89c4d016.jpg
 img/art/Bureau-Vol-C-Eivy,Adam-Coffee-2x3.4e1b6b16491d037c6e5a.jpg
-img/art/Bureau-Vol-C-Eivy,Adam-Coffee-2x3_thumb.d17ba1a8e86300199e35.jpg
+img/art/Bureau-Vol-C-Eivy,Adam-Coffee-2x3_thumb.01e14b2904d845fc666c.jpg
 img/art/Bureau-Vol-C-Eivy,Adam-Coffee-3x3.ad7c5fc5da1872327a1d.jpg
 img/art/Bureau-Vol-C-Eivy,Adam-Coffee-3x3_thumb.2fb765a3b60266d05f3e.jpg
 img/art/Bureau-Vol-D-Eivy,Adam-Drink-and-Draw.21c294d483aca6352a12.jpg
@@ -25,15 +25,15 @@ img/art/Bureau-Vol-D-Eivy,Adam-Drink-and-Draw_thumb.1382918be3388c2193e7.jpg
 img/art/Card-Back.5ce1c8f7ae45a63ce0e8.jpg
 img/art/Card-Back_thumb.cde08be68a0679d7c411.jpg
 img/art/Card-CA.abcd26264b093b0a65a7.jpg
-img/art/Card-CA_thumb.5fd8c0c6c35805d27e2c.jpg
+img/art/Card-CA_thumb.0e156fce4871938d814a.jpg
 img/art/Card-D4.73a5eb9ab8fcb7781b72.jpg
-img/art/Card-D4_thumb.c43de77ca5b7d2339279.jpg
+img/art/Card-D4_thumb.01c5933a1a2cbeb07dc6.jpg
 img/art/Card-H7.ac97a1aa00577c48e7c6.jpg
 img/art/Card-H7_thumb.50e2186cab3883c9fbf2.jpg
 img/art/Card-J2.6b5c41b41f392845437f.jpg
-img/art/Card-J2_thumb.8e092d094a7a43020273.jpg
+img/art/Card-J2_thumb.970513b6ade81a390c3f.jpg
 img/art/Card-S10.1dca9b4912dae6b854c1.jpg
-img/art/Card-S10_thumb.2dffe2adcafd5c5822a7.jpg
+img/art/Card-S10_thumb.e10071e97465d1a46d3b.jpg
 img/code/dotfiles_repeat.gif
 img/icon/facebook.svg
 img/icon/github.svg
@@ -44,7 +44,6 @@ index.html
 js/app.1b87ee0230d7472ee0db.js
 js/build.a71a0fd716b4e6085060.js
 js/loadhtmlslides.4d75cead99e5bfb88378.js
-pinterest-8184f.html
 bower_components/reveal.js/css/print/pdf.css
 /
 
