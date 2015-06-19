@@ -16,6 +16,10 @@ module.exports = function (grunt) {
             cache: {
                 patterns: [
                   'dist/**/*',
+                  '!dist/pub/**/*',
+                  '!dist/slides/**/*',
+                  '!dist/bin/**/*',
+                  '!dist/CNAME',
                   '!dist/main.appcache',
                   '!dist/bower_components/**/*',
                   '!dist/**/.DS_Store',
@@ -100,7 +104,6 @@ module.exports = function (grunt) {
             'bin/**',
             'img/**',
             'pub/**',
-            'lib/**',
             'css/*.css',
             '*.png'
           ],
