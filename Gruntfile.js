@@ -12,7 +12,7 @@ module.exports = function (grunt) {
             basePath: 'dist'
         },
         all: {
-            dest: 'dist/main.appcache',
+            dest: 'dist/adam.appcache',
             cache: {
                 patterns: [
                   'dist/**/*',
