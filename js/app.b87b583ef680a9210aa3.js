@@ -55,7 +55,7 @@
          progress: false,
          history: true,
          mouseWheel: true,
-         previewLinks: true,
+         previewLinks: false,
          keyboard: {
               // enter
               13: fnNext,
