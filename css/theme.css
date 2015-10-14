@@ -180,6 +180,14 @@ body {
 .reveal pre {
   box-shadow: none;
   font-size: 12px; }
+  .reveal pre code {
+    background-color: #000;
+    border: thin solid #ccc;
+    display: block;
+    font-size: 1.4em;
+    line-height: 1.4em; }
+    .reveal pre code .prompt {
+      color: #13DAEC; }
 .reveal section img {
   border: none; }
 .reveal section .group img {
