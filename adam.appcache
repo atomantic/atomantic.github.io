@@ -1,11 +1,11 @@
 CACHE MANIFEST
-# rev 1 - 2015-10-12T21:31:20.310Z
+# rev 1 - 2015-10-14T22:16:03.471Z
 
 CACHE:
 apple-touch-icon.png
 beetledeck.html
-css/build.dfa6b984a4c78f6eefaf.css
-css/theme.ed10e1f4ff3ff7df3f1f.css
+css/build.5e1c2c5b6359f9cbc552.css
+css/theme.6ca3756903d1951aa484.css
 favicon.png
 img/art/2013.halloween.06398f3ac4daa3e0fab2.jpg
 img/art/2013.halloween_thumb.71217b4095e1f2ba6756.jpg
@@ -21,23 +21,23 @@ img/art/Bureau-Vol-C-Eivy,Adam-Coffee-1x3_thumb.dd839c320e5d89c4d016.jpg
 img/art/Bureau-Vol-C-Eivy,Adam-Coffee-2x3.4e1b6b16491d037c6e5a.jpg
 img/art/Bureau-Vol-C-Eivy,Adam-Coffee-2x3_thumb.855c2499e59c56ea49a9.jpg
 img/art/Bureau-Vol-C-Eivy,Adam-Coffee-3x3.ad7c5fc5da1872327a1d.jpg
-img/art/Bureau-Vol-C-Eivy,Adam-Coffee-3x3_thumb.9faae5052e60d7dbbe23.jpg
+img/art/Bureau-Vol-C-Eivy,Adam-Coffee-3x3_thumb.2fb765a3b60266d05f3e.jpg
 img/art/Bureau-Vol-D-Eivy,Adam-Drink-and-Draw.21c294d483aca6352a12.jpg
-img/art/Bureau-Vol-D-Eivy,Adam-Drink-and-Draw_thumb.b1121e50c6cba4981e0a.jpg
+img/art/Bureau-Vol-D-Eivy,Adam-Drink-and-Draw_thumb.1382918be3388c2193e7.jpg
 img/art/Card-Back-V7.07aa3d24574b0fb38015.jpg
 img/art/Card-Back-V7_thumb.51f167aae5a50946f0f0.jpg
 img/art/Card-Back.8b3bf2d738d1123a36ac.jpg
-img/art/Card-Back_thumb.fff2ea0664123980f708.jpg
+img/art/Card-Back_thumb.66427af42e75d1832cb3.jpg
 img/art/Card-CA.13a28fbaf66b79f58a12.jpg
-img/art/Card-CA_thumb.dc6e904181c4b02b98df.jpg
+img/art/Card-CA_thumb.1feb6775c1951d4858a0.jpg
 img/art/Card-D10.3f798ddf894ef9577476.jpg
 img/art/Card-D10_thumb.c435bb62c0af5e44238e.jpg
 img/art/Card-H7.da628732799c21b61f29.jpg
-img/art/Card-H7_thumb.1cbc2e5c7c6cc0adc5f6.jpg
+img/art/Card-H7_thumb.f4f53ddd64190464d7ca.jpg
 img/art/Card-J2.b91596e788a8edc42c62.jpg
 img/art/Card-J2_thumb.9d95ff62eebe281f6667.jpg
 img/art/Card-S10.04b0475a82a8a6753a57.jpg
-img/art/Card-S10_thumb.87ca11a0b2c79fae73fc.jpg
+img/art/Card-S10_thumb.5cccb3fbc28482cd5f4d.jpg
 img/code/dotfiles_repeat.gif
 img/icon/facebook.svg
 img/icon/github.svg
@@ -46,7 +46,7 @@ img/icon/linkedin.svg
 img/icon/twitter.svg
 index.html
 js/app.b87b583ef680a9210aa3.js
-js/build.1d82c8a9e0a6a072b230.js
+js/build.2dba1d8c213799a44de4.js
 js/loadhtmlslides.4d75cead99e5bfb88378.js
 lib/css/zenburn.css
 lib/font/league_gothic-webfont.eot
