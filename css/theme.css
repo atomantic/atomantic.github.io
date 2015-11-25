@@ -178,6 +178,8 @@ body {
 .reveal .big {
   font-size: 120%;
   line-height: 200%; }
+.reveal .navigate-right, .reveal .navigate-down {
+  cursor: pointer; }
 .reveal b.bot {
   transition: 0.5s;
   transition-delay: 1s;
