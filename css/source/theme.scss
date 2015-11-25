@@ -57,6 +57,55 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 // for further explanations on how reveal.js themes work.
 
 .reveal {
+
+
+  .alert {
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-shadow:none;
+    font-weight: 300;
+  }
+
+
+  .alert .alert-link {
+    font-weight: bold;
+  }
+
+  .alert-success, .alert-success a{
+    color: #468847;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+  }
+
+  .alert-detail, .alert-detail a{
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+  }
+
+  .alert-info, .alert-info a{
+    color: #3a87ad;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+  }
+
+  .alert-warning, .alert-warning a{
+    color: #f85;
+    background-color: #fcf8e3;
+    border-color: #fbeed5;
+  }
+
+  .alert-danger, .alert-danger a {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+  }
+  .big {
+    font-size: 120%;
+    line-height: 200%;
+  }
   b.bot {
     transition: 0.5s;
     transition-delay: 1s;
@@ -179,6 +228,8 @@ i.fa {
     }
   }
 }
+
+
 
 i.navBtn {
   font-size:40px;

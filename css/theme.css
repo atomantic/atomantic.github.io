@@ -146,6 +146,38 @@ body {
 .reveal .slide-number {
   color: #13DAEC; }
 
+.reveal .alert {
+  padding: 5px;
+  margin-bottom: 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-shadow: none;
+  font-weight: 300; }
+.reveal .alert .alert-link {
+  font-weight: bold; }
+.reveal .alert-success, .reveal .alert-success a {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6; }
+.reveal .alert-detail, .reveal .alert-detail a {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc; }
+.reveal .alert-info, .reveal .alert-info a {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1; }
+.reveal .alert-warning, .reveal .alert-warning a {
+  color: #f85;
+  background-color: #fcf8e3;
+  border-color: #fbeed5; }
+.reveal .alert-danger, .reveal .alert-danger a {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7; }
+.reveal .big {
+  font-size: 120%;
+  line-height: 200%; }
 .reveal b.bot {
   transition: 0.5s;
   transition-delay: 1s;
