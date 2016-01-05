@@ -108,6 +108,7 @@ module.exports = function (grunt) {
             'pub/**',
             'css/*.css',
             '*.png',
+            'keybase.txt',
             'beetledeck.html'
           ],
           dest: 'dist/'
