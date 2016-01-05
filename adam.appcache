@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# rev 1 - 2015-11-25T05:35:07.569Z
+# rev 1 - 2016-01-05T05:00:00.424Z
 
 CACHE:
 apple-touch-icon.png
@@ -48,6 +48,7 @@ index.html
 js/app.b87b583ef680a9210aa3.js
 js/build.1d82c8a9e0a6a072b230.js
 js/loadhtmlslides.4d75cead99e5bfb88378.js
+keybase.txt
 lib/css/zenburn.css
 lib/font/league_gothic-webfont.eot
 lib/font/league_gothic-webfont.svg

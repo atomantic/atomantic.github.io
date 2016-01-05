@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/antic
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://adameivy.com
+  * I am antic (https://keybase.io/antic) on keybase.
+  * I have a public key with fingerprint A9AF EF8D 6D2A 85CE 64A3  6EE8 0A30 C4EE D04A DB0C
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01015a9f5b4a7e1cf5bef5808b364b64fad452c31391cad73d04336b58ba9f993e550a",
+            "fingerprint": "a9afef8d6d2a85ce64a36ee80a30c4eed04adb0c",
+            "host": "keybase.io",
+            "key_id": "0a30c4eed04adb0c",
+            "kid": "01015a9f5b4a7e1cf5bef5808b364b64fad452c31391cad73d04336b58ba9f993e550a",
+            "uid": "3ab00f8a705f6d9abb26397b20407019",
+            "username": "antic"
+        },
+        "service": {
+            "hostname": "adameivy.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1451969713,
+    "expire_in": 157680000,
+    "prev": "d17d2fbebcbf354b7141b33591648a4ddbf36b051225092dc617fbacbf0ff1ad",
+    "seqno": 10,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.49
+Comment: https://keybase.io/crypto
+
+yMIjAnicrZJbSBVBGMePZscShS5EEqWxBZWIzezu7OWUl4KoKLOs1IfiNLMzq4u6
+e9yzmoeTT1pRB4JC6cGo6KUrqdCVDNNCH6KbVHaBKBIqqwdfjG7arNVTr83LzHzf
+//+b7xu+OxlTAmlJs0U5v/nhsJl0t7e1PlCW2NgVF4hDY0IoLlSzyY3VUBb1wtUW
+FUICgAAirJuIyFhl0OAHZiINaERSZKLIJqYyEg0JSjo0MFUlCmRJUgjSCHfpusQQ
+AljIFUzLrmRuxLVsj2Oxjk1malShItaQwRQZSwpjGsASMGTGOAVTAgxurHKivoMX
+R3CU5VkOj/FL+Hd5/+r/c931kzgJEwBMDasAmQrVMSGiIukqEYEMVAB1Xxhlro1r
+md+d7VmG0JQr8FCDZTD/V/02/qYp362GWJ7h1HJjxHU8x3BqeKbK8yIh3+jFIr5y
+NyPhP4wwsWzK/5AbGpgbtRxbCEGuNDzLh0IZQV3RVSjlCqwxYrksbPkKpCoa4Mt/
+hjVwJIUqFU3CiEFMCclEhTIkkoR0qMgalinlYYUABEURAV2khgJVk2CuBqYJMRX8
+rupsh7M51MOVnBm1Km3s1btMaOq7tSMlkJQWCE5N9ocrkDZ9xt+R65yTOrE2e9/4
+/YGWXdGn7omKZ92Z1y6d71+e09127MjQ0sPJr56VT2SWbHxUc+hIXufepDFnyYaS
+e7FQc3v86bzNjZezbi8L2hjEuxPvWrd+bvvZ1YbbrveE+hPPC26++Hg5Z+fHkdHO
+A+2bqvfrx4pm4TUPysa0+1tK81Nn1IeGzHUHry4KvDn9/UtR2tDSc6cOdC5+7E70
+bKvbk53ouI6eZK2unfu2uPfUir7Co98Sg3c70HBx+vq4sfDMtJ7g1HdlrXmrWuaO
+D27/cCMxMfLefDk4+iNl5GJRwfHXUGpuzxiPJb6i4GDFp/WL01d6Awv6RgovRLOf
+eMvK558cvhIKPioo3TR6duYvB6tE1g==
+=SU8A
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/antic
+
+==================================================================
