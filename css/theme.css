@@ -222,6 +222,9 @@ body {
     line-height: 1.4em; }
     .reveal pre code .prompt {
       color: #13DAEC; }
+.reveal pre.gpg {
+  font-size: 4px;
+  width: 70px; }
 .reveal section img {
   border: none; }
 .reveal section .group img {
