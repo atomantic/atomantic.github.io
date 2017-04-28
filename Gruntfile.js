@@ -57,13 +57,6 @@ module.exports = function(grunt) {
                 ],
                 tasks: ['buildIndex']
             },
-            jshint: {
-                files: [
-                    'Gruntfile.js',
-                    'js/*.js'
-                ],
-                tasks: ['jshint']
-            },
             sass: {
                 files: ['css/source/theme.scss'],
                 tasks: ['sass']
@@ -86,12 +79,6 @@ module.exports = function(grunt) {
                     livereload: true
                 }
             }
-        },
-        jshint: {
-            options: {
-                jshintrc: '.jshintrc'
-            },
-            all: ['js/*.js']
         },
         copy: {
             dist: {
@@ -199,10 +186,8 @@ module.exports = function(grunt) {
         return grunt.file.write('index.html', html);
     });
 
-    grunt.registerTask('test', '*Lint* js files.', ['jshint']);
     grunt.registerTask('dist', 'Save files to *dist* directory.', [
         'clean',
-        'test',
         'sass',
         'buildIndex',
         'copy',
@@ -220,7 +205,7 @@ module.exports = function(grunt) {
         'connect:livereload',
         'watch'
     ]);
-    grunt.registerTask('default', ['test', 'server']);
+    grunt.registerTask('default', ['server']);
 
     grunt.registerTask('cache', ['appcache']);
 };
