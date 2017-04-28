@@ -1,11 +1,11 @@
 CACHE MANIFEST
-# rev 1 - 2016-01-16T04:40:34.128Z
+# rev 1 - 2017-04-28T16:56:47.549Z
 
 CACHE:
 apple-touch-icon.png
 beetledeck.html
-css/build.befda42fa0e9c9622dcd.css
-css/theme.95c5622cdfecfe721abc.css
+css/build.54ee3409c58c6d4bc009.css
+css/theme.bd9e04de671eb07ad5a9.css
 favicon.png
 img/art/2013.halloween.f9410082bbf34c185c45.jpg
 img/art/2013.halloween_thumb.0f95502dc4a029dcfec9.jpg
@@ -45,7 +45,7 @@ img/icon/google.svg
 img/icon/linkedin.svg
 img/icon/twitter.svg
 index.html
-js/app.b87b583ef680a9210aa3.js
+js/app.9c025e847e18595d788f.js
 js/build.1d82c8a9e0a6a072b230.js
 js/loadhtmlslides.4d75cead99e5bfb88378.js
 keybase.txt
