@@ -284,6 +284,9 @@ i.fa {
     border-radius: 8px;
     font-size: 112px; }
 
+ul.small {
+  font-size: .8em; }
+
 i.navBtn {
   font-size: 40px; }
 

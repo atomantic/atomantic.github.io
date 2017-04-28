@@ -20,6 +20,11 @@
     "grunt-usemin": "~2.0.2",
     "load-grunt-tasks": "~0.4.0"
   },
+  "scripts": {
+    "setup": "npm i && npm i -g grunt bower && bower install",
+    "run": "grunt server",
+    "deploy": "grunt deploy"
+  },
   "engines": {
     "node": ">=0.8.0"
   },

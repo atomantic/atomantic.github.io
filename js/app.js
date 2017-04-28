@@ -1,4 +1,4 @@
-/*global Reveal,document,window*/
+/* global Reveal,document,window*/
 (function() {
     'use strict';
     var fnNav = function(direction) {
@@ -25,13 +25,13 @@
             fnNav(-1);
         };
 
-    Reveal.addEventListener( 'ready', function( /*event*/ ) {
+    Reveal.addEventListener( 'ready', function( /* event*/ ) {
         // event.currentSlide, event.indexh, event.indexv
         var $body = document.querySelector('body');
         // grab all lightbox images and throw them in the body (outside of reveal)
         // so they show full-screen zoomed
         var $lbs = document.querySelectorAll('.lightbox');
-        [].forEach.call($lbs, function (item) {
+        [].forEach.call($lbs, function(item) {
             $body.insertBefore(item, $body.firstChild); // .css({zoom:$('.slides').css('zoom')}));
             // make sure we can click to close
             item.addEventListener('click', function() {
@@ -52,23 +52,23 @@
     // https://github.com/hakimel/reveal.js#configuration
 
     Reveal.initialize({
-         progress: false,
-         history: true,
-         mouseWheel: true,
-         previewLinks: false,
-         keyboard: {
+        progress: false,
+        history: true,
+        mouseWheel: true,
+        previewLinks: false,
+        keyboard: {
               // enter
-              13: fnNext,
+            13: fnNext,
               // right
-              39: fnNext,
+            39: fnNext,
               // left
-              37: fnPrev
-         },
-         theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-         transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+            37: fnPrev
+        },
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
          // Optional libraries used to extend on reveal.js
-         dependencies: [
+        dependencies: [
               { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
               { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
               { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }
@@ -79,7 +79,7 @@
               // { src: 'bower_components/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 
               // { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
-         ]
+        ]
     });
 
 })();

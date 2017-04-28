@@ -14,7 +14,7 @@ rules:
     no-undefined: 2
     quotes: [2, "single"]
     radix: 2
-    space-after-function-name: [2, "never"]
+    space-before-function-paren: [2, "never"]
     space-infix-ops: 0
-    spaced-line-comment: [2, "always", { exceptions: ["-"]}]
+    spaced-comment: [2, "always", { exceptions: ["-"]}]
     valid-jsdoc: [2, { prefer: { "return": "returns"}}]
