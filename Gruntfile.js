@@ -22,11 +22,9 @@ module.exports = function(grunt) {
                         '!dist/CNAME',
                         '!dist/pinterest-8184f.html',
                         '!dist/main.appcache',
-                        '!dist/bower_components/**/*',
                         '!dist/**/.DS_Store',
                         '!dist/lib/font/league_gothic_license',
-                        '!dist/lib/js/head.min.js',
-                        'dist/bower_components/reveal.js/css/print/pdf.css'
+                        '!dist/lib/js/head.min.js'
                     ],
                     literals: '/'            // insert '/' as is in the "CACHE:" section
                 },
