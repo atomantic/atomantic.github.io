@@ -19,7 +19,7 @@
     "grunt-filerev": "^0.2.1",
     "grunt-usemin": "~2.0.2",
     "load-grunt-tasks": "~0.4.0",
-    "reveal.js": "3.7.0"
+    "reveal.js": "4.3.0"
   },
   "scripts": {
     "setup": "npm i && npm i -g grunt sass",
