@@ -1,0 +1,70 @@
+[
+    [
+      "index.html",
+      {
+          "attr":{
+              "data-background":"/img/art/Beetle-Royale-Box.jpg"
+          },
+          "title": "Beetle Royale",
+          "figure_title": "Playing Cards, Coloring Book, Stickers and Greeting Cards",
+          "caption": "Available on <a target='br' href='http://BeetleRoyale.etsy.com'>BeetleRoyale.etsy.com</a>",
+          "figures":[
+              "/img/art/Card-Back-V7.jpg",
+              "/img/art/Card-CA.jpg",
+              "/img/art/Card-D10.jpg",
+              "/img/art/Card-H7.jpg",
+              "/img/art/Card-J2.jpg",
+              "/img/art/Card-S10.jpg"
+          ]
+      },{
+          "attr":{
+              "data-background":"/img/art/2013.halloween.jpg"
+          },
+          "title": "Why Am I Bleeding?",
+          "figure_title": "Digital Painting (Procreate, iPad)",
+          "caption": "Halloween 2013, Bureau of Drawers Art Show @ Cafe Racer, Seattle",
+          "figures":["img/art/2013.halloween.jpg"]
+      },{
+          "attr":{
+              "data-background":"/img/art/Bureau-Vol-D-Eivy,Adam-Drink-and-Draw.jpg"
+          },
+          "title": "Drink and Draw",
+          "caption": "Bureau of Drawers, Querterly Vol. D: Jan, 2013",
+          "figures":[
+              "/img/art/Bureau-Vol-D-Eivy,Adam-Drink-and-Draw.jpg"
+          ]
+      },{
+          "attr":{
+              "data-background":"/img/art/Bureau-Vol-C-Eivy,Adam-Coffee-1x3.jpg"
+          },
+          "title": "Hipsters Like Coffee",
+          "caption": "Bureau of Drawers, Querterly Vol. C: Sept, 2012",
+          "figures":[
+              "/img/art/Bureau-Vol-C-Eivy,Adam-Coffee-1x3.jpg",
+              "/img/art/Bureau-Vol-C-Eivy,Adam-Coffee-2x3.jpg",
+              "/img/art/Bureau-Vol-C-Eivy,Adam-Coffee-3x3.jpg"
+          ]
+      },{
+          "attr":{
+              "data-background":"/img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-1x3.jpg"
+          },
+          "title": "Before the World Ended",
+          "caption": "Bureau of Drawers, Querterly Vol. B: June, 2012",
+          "figures":[
+              "/img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-1x3.jpg",
+              "/img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-2x3.jpg",
+              "/img/art/Bureau-Vol-B-Eivy,Adam-Before-the-World-Ended-3x3.jpg"
+          ]
+      },
+      "art.html"
+    ],
+    "code_mission.html",
+    "dotfiles.html",
+    "teaching.html",
+    "jokes.html",
+    "talks.html",
+    "status.html",
+    "code.html",
+    "resume.html",
+    "contact.html"
+]
