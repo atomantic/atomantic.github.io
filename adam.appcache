@@ -1,16 +1,15 @@
 CACHE MANIFEST
-# rev 1 - 2023-05-07T17:04:25.859Z
+# rev 1 - 2023-05-07T17:23:46.665Z
 
 CACHE:
 apple-touch-icon.png
 beetledeck.html
-css/build.2bca3e54f4ace60271d6.css
+css/build.9b120ef25993d5806c2c.css
 css/pdf.1af2233ffbdfe7f70185.css
 css/pdf.min.36978a59e22a177c04b2.css
 css/reset.min.812f87eb6ee90fca8697.css
-css/reveal.min.75e860a13f003b0c7a43.css
+css/reveal.min.b37ccaa672614e65ed15.css
 css/theme.8c52da4c1786e16893f3.css
-css/zenburn.min.7cfd90eb6376890a51a4.css
 favicon.png
 img/Adam.Eivy.window.512.6c3028d10b816eb163c2.png
 img/art/2013.halloween.edd8328bbf242f0c56ef.jpg
@@ -52,10 +51,11 @@ img/icon/linkedin.svg
 img/icon/twitter.svg
 index.html
 js/app.57be0a9f122e5df1bbdf.js
-js/build.92befe9961da38353d8f.js
-js/head.min.f71d9e7f2727beaa4ca4.js
+js/build.cbda1625f0a46d0ea0ce.js
+js/head.min.8244e91e3efc1ad6285d.js
 js/loadhtmlslides.4d75cead99e5bfb88378.js
-js/reveal.min.7c79fb6490298b7de50a.js
+js/reveal.e1e39b646fdf31ab1352.js
+js/reveal.min.80251a50a56eb4860556.js
 keybase.txt
 lib/css/zenburn.css
 lib/font/league_gothic-webfont.eot
