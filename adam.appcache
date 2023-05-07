@@ -1,15 +1,15 @@
 CACHE MANIFEST
-# rev 1 - 2023-05-07T17:23:46.665Z
+# rev 1 - 2023-05-07T17:29:38.918Z
 
 CACHE:
 apple-touch-icon.png
 beetledeck.html
-css/build.9b120ef25993d5806c2c.css
+css/build.84acca148e54778aa81f.css
 css/pdf.1af2233ffbdfe7f70185.css
 css/pdf.min.36978a59e22a177c04b2.css
 css/reset.min.812f87eb6ee90fca8697.css
 css/reveal.min.b37ccaa672614e65ed15.css
-css/theme.8c52da4c1786e16893f3.css
+css/theme.636ee134fef78e3230b3.css
 favicon.png
 img/Adam.Eivy.window.512.6c3028d10b816eb163c2.png
 img/art/2013.halloween.edd8328bbf242f0c56ef.jpg
@@ -50,8 +50,8 @@ img/icon/google.svg
 img/icon/linkedin.svg
 img/icon/twitter.svg
 index.html
-js/app.57be0a9f122e5df1bbdf.js
-js/build.cbda1625f0a46d0ea0ce.js
+js/app.e1b7bc7e6679fd6840b0.js
+js/build.f538240c337a7b314de1.js
 js/head.min.8244e91e3efc1ad6285d.js
 js/loadhtmlslides.4d75cead99e5bfb88378.js
 js/reveal.e1e39b646fdf31ab1352.js
@@ -64,6 +64,43 @@ lib/font/league_gothic-webfont.ttf
 lib/font/league_gothic-webfont.woff
 lib/js/classList.js
 lib/js/html5shiv.js
+lib/reveal.js/css/print/paper.css
+lib/reveal.js/css/print/pdf.css
+lib/reveal.js/css/reveal.css
+lib/reveal.js/css/reveal.min.css
+lib/reveal.js/css/theme/README.md
+lib/reveal.js/css/theme/beige.css
+lib/reveal.js/css/theme/blood.css
+lib/reveal.js/css/theme/default.css
+lib/reveal.js/css/theme/moon.css
+lib/reveal.js/css/theme/night.css
+lib/reveal.js/css/theme/serif.css
+lib/reveal.js/css/theme/simple.css
+lib/reveal.js/css/theme/sky.css
+lib/reveal.js/css/theme/solarized.css
+lib/reveal.js/css/theme/source/beige.scss
+lib/reveal.js/css/theme/source/blood.scss
+lib/reveal.js/css/theme/source/default.scss
+lib/reveal.js/css/theme/source/moon.scss
+lib/reveal.js/css/theme/source/night.scss
+lib/reveal.js/css/theme/source/serif.scss
+lib/reveal.js/css/theme/source/simple.scss
+lib/reveal.js/css/theme/source/sky.scss
+lib/reveal.js/css/theme/source/solarized.scss
+lib/reveal.js/css/theme/template/mixins.scss
+lib/reveal.js/css/theme/template/settings.scss
+lib/reveal.js/css/theme/template/theme.scss
+lib/reveal.js/js/reveal.js
+lib/reveal.js/js/reveal.min.js
+lib/reveal.js/lib/css/zenburn.css
+lib/reveal.js/lib/font/league_gothic-webfont.eot
+lib/reveal.js/lib/font/league_gothic-webfont.svg
+lib/reveal.js/lib/font/league_gothic-webfont.ttf
+lib/reveal.js/lib/font/league_gothic-webfont.woff
+lib/reveal.js/lib/font/league_gothic_license
+lib/reveal.js/lib/js/classList.js
+lib/reveal.js/lib/js/head.min.js
+lib/reveal.js/lib/js/html5shiv.js
 /
 
 NETWORK:
