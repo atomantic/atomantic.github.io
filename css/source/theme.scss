@@ -5,11 +5,11 @@
  */
 
 // This file has been copied over from
-// ../../node_modules/reveal.js/css/theme/source/default.scss
+// ../../lib/reveal.js/css/theme/source/default.scss
 
 // Default mixins and settings -----------------
-@import "../../node_modules/reveal.js/css/theme/template/mixins";
-@import "../../node_modules/reveal.js/css/theme/template/settings";
+@import "../../lib/reveal.js/css/theme/template/mixins";
+@import "../../lib/reveal.js/css/theme/template/settings";
 // ---------------------------------------------
 
 // Include theme-specific fonts ----------------
@@ -40,7 +40,7 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 // $headingTextTransform: none;
 // $selectionBackgroundColor: #e0ad52;
 // $mainFontSize: 30px;
-// See ../../node_modules/reveal.js/css/theme/template/settings.scss for the full list.
+// See ../../lib/reveal.js/css/theme/template/settings.scss for the full list.
 // ---------------------------------------------
 
 // Background generator ------------------------
@@ -50,7 +50,7 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 // ---------------------------------------------
 
 // Theme template ------------------------------
-@import "../../node_modules/reveal.js/css/theme/template/theme";
+@import "../../lib/reveal.js/css/theme/template/theme";
 // ---------------------------------------------
 
 // See ../../node_modules/reveal.js/css/theme/README.md
