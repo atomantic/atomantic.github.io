@@ -82,6 +82,8 @@ module.exports = function (grunt) {
           {
             expand: true,
             src: [
+              ".well-known/**",
+              "_config.yml",
               "CNAME",
               "slides/**",
               "js/**",
