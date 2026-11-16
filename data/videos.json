@@ -87,6 +87,7 @@
       "type": "music-video",
       "title": "You Are the Room",
       "year": 2026,
+      "date": "2026-10-06",
       "description": "Grew out of a reply on X to a critique of the Chinese Room argument: what if the room itself is what holds the knowledge?",
       "youtube": "jEHPFXi792M",
       "links": {
@@ -94,6 +95,7 @@
         "spotify": "https://open.spotify.com/track/5BePPeE7K3jzFNdUbfuvF5",
         "appleMusic": "https://music.apple.com/us/album/you-are-the-room/6820512767?i=6820512768",
         "suno": "https://suno.com/song/62cd2904-a9ad-41fc-8097-c85cebe08586",
+        "x": "https://x.com/antic/status/2107522062558560745",
         "other": [
           {
             "label": "The X post that started it",
