@@ -4,8 +4,8 @@ Adam Eivy's portfolio of music videos and short films, live at https://adameivy.
 
 It is a static site with no build step: `index.html` (work), `statement.html` (artist
 statement and bio), `assets/site.css`, `assets/site.js` and the catalog in `data/videos.json`.
-The top of the home page is a showcase: a large player plus a filmstrip of every project,
-built from the same catalog.
+The home page opens on the work: a player with the selected project's details and a strip
+of every project, all in the first screen, then an index of everything released.
 
 ## Add a video or film
 
@@ -32,8 +32,9 @@ Open `data/videos.json`, copy an entry to the top of `videos`, and fill it in:
 ```
 
 - Order in the file is the order on the page, so put the newest first.
-- `type` is `music-video` or `short-film`. Short films get their own section, which shows a
-  "coming soon" panel until the first one is added.
+- `type` is `music-video` or `short-film`. Each type is numbered by release (oldest is No. 01)
+  and gets its own group in the index; short films show "in production" until the first one
+  is added.
 - `youtube` is the video id and drives both the inline player and the thumbnail. For a
   self-hosted file use `video` (an .mp4 URL) plus `poster` instead.
 - `featured: true` puts that entry in the hero. Without it, the first entry is used.

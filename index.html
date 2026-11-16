@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Adam Eivy | Music Videos &amp; Short Films</title>
+    <title>Adam Eivy</title>
     <meta name="description" content="Music videos and short films by Adam Eivy. We make art to dream bigger." />
-    <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0d1c" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#e9ecf4" media="(prefers-color-scheme: light)" />
     <meta name="color-scheme" content="dark light" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Adam Eivy | Music Videos &amp; Short Films" />
+    <meta property="og:title" content="Adam Eivy" />
     <meta property="og:description" content="We make art to dream bigger. Music videos and short films by Adam Eivy." />
     <meta property="og:url" content="https://adameivy.com/" />
     <meta property="og:image" content="https://i.ytimg.com/vi/l4O27yxXgek/maxresdefault.jpg" />
@@ -28,92 +28,75 @@
     <link rel="stylesheet" href="assets/site.css" />
   </head>
   <body>
-    <a class="skip" href="#work">Skip to videos</a>
+    <a class="skip" href="#work">Skip to the work</a>
 
-    <header class="masthead" id="top">
-      <a class="wordmark" href="#top" aria-label="Adam Eivy, home">
-        <span>Adam</span><span>Eivy</span>
-      </a>
-      <nav class="nav" aria-label="Sections">
-                <a href="#work">Videos</a>
-        <a href="#films">Films</a>
-        <a href="statement.html">Statement</a>
-      </nav>
-      <div class="cta-group cta-group--compact" data-cta>
-        <a class="btn btn--yt" data-cta-yt href="https://www.youtube.com/@atomantic?sub_confirmation=1" target="_blank" rel="noopener" aria-label="Subscribe on YouTube">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube" /></svg><span class="btn__label">Subscribe</span>
-        </a>
-        <a class="btn btn--x" data-cta-x href="https://x.com/intent/follow?screen_name=antic" target="_blank" rel="noopener" aria-label="Follow @antic on X">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x" /></svg><span class="btn__label">Follow</span>
-        </a>
+    <header class="masthead">
+      <div class="masthead__inner">
+        <a class="wordmark" href="./" aria-label="Adam Eivy, home"><span>Adam</span> <span>Eivy</span></a>
+        <nav class="nav" aria-label="Sections">
+          <a href="#work">Work</a>
+          <a href="#index">Index</a>
+          <a href="statement.html">Statement</a>
+        </nav>
+        <div class="follow">
+          <a class="btn btn--yt" data-cta-yt href="https://www.youtube.com/@atomantic?sub_confirmation=1" target="_blank" rel="noopener" aria-label="Subscribe on YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube" /></svg><span class="btn__label">Subscribe</span>
+          </a>
+          <a class="btn btn--x" data-cta-x href="https://x.com/intent/follow?screen_name=antic" target="_blank" rel="noopener" aria-label="Follow @antic on X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x" /></svg><span class="btn__label">Follow</span>
+          </a>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="intro" aria-labelledby="hero-title">
-        <h1 id="hero-title" class="hero__title">We make art to <em>dream bigger.</em></h1>
-        <div class="intro__side">
-          <p class="hero__lede">
-            Music videos and short films by Adam Eivy. Pick a project below to watch it here.
+      <section class="work" id="work" aria-labelledby="lead-title">
+        <div class="lead">
+          <h1 class="lead__title" id="lead-title">We make art to <em>dream bigger.</em></h1>
+          <p class="lead__side">
+            <span>Music videos and short films by Adam Eivy, Seattle.</span>
+            <a class="text-link" href="statement.html">Artist statement</a>
           </p>
-          <a class="text-link mono" href="statement.html">Read the artist statement →</a>
         </div>
+        <div class="stage" id="stage"></div>
       </section>
 
-      <section class="showcase" id="showcase" aria-label="Projects">
-        <div class="showcase__stage" id="stage"></div>
-        <div class="showcase__rail">
-          <ol class="strip" id="strip" aria-label="All projects"></ol>
+      <section class="index" id="index" aria-labelledby="index-title">
+        <div class="section-head">
+          <h2 class="section-title" id="index-title">Index</h2>
+          <p class="section-note">Everything released so far, newest first. Select a title to play it.</p>
         </div>
+        <ol class="index__list" id="index-list"></ol>
       </section>
 
-      <section class="reel" id="work" aria-labelledby="work-title">
-        <header class="reel__head">
-          <h2 id="work-title" class="reel__title">Music Videos</h2>
-          <p class="reel__count mono" id="work-count"></p>
-        </header>
-        <ol class="grid" id="work-grid"></ol>
-      </section>
-
-      <aside class="band" aria-labelledby="band-title">
-        <div class="band__marquee" aria-hidden="true">
-          <span>Next video in production&nbsp;·&nbsp;Next video in production&nbsp;·&nbsp;Next video in production&nbsp;·&nbsp;Next video in production&nbsp;·&nbsp;</span>
-          <span>Next video in production&nbsp;·&nbsp;Next video in production&nbsp;·&nbsp;Next video in production&nbsp;·&nbsp;Next video in production&nbsp;·&nbsp;</span>
-        </div>
-        <div class="band__inner">
-          <h2 id="band-title" class="band__title">Don't miss the <em>next one.</em></h2>
-          <p class="band__lede">
-            Every new video appears on YouTube first. Subscribe there and follow along on X so the
-            next one finds you.
-          </p>
-          <div class="cta-group" data-cta>
-            <a class="btn btn--yt btn--lg" data-cta-yt href="https://www.youtube.com/@atomantic?sub_confirmation=1" target="_blank" rel="noopener">
+      <aside class="follow-band" aria-labelledby="follow-title">
+        <div class="follow-band__inner">
+          <div>
+            <h2 class="follow-band__title" id="follow-title">See the next one first.</h2>
+            <p class="follow-band__text">Every new video appears on YouTube first. Subscribe there and follow along on X.</p>
+          </div>
+          <div class="follow">
+            <a class="btn btn--yt" data-cta-yt href="https://www.youtube.com/@atomantic?sub_confirmation=1" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube" /></svg><span>Subscribe on YouTube</span>
             </a>
-            <a class="btn btn--x btn--lg" data-cta-x href="https://x.com/intent/follow?screen_name=antic" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x" /></svg><span>Follow @antic on X</span>
+            <a class="btn btn--x" data-cta-x href="https://x.com/intent/follow?screen_name=antic" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x" /></svg><span>Follow @antic</span>
             </a>
           </div>
         </div>
       </aside>
 
-      <section class="reel reel--films" id="films" aria-labelledby="films-title">
-        <header class="reel__head">
-          <h2 id="films-title" class="reel__title">Short Films</h2>
-          <p class="reel__count mono" id="films-count"></p>
-        </header>
-        <ol class="grid" id="films-grid"></ol>
-      </section>
-
       <section class="about" id="about" aria-labelledby="about-title">
-        <h2 id="about-title" class="about__title">About</h2>
+        <div class="section-head">
+          <h2 class="section-title" id="about-title">About</h2>
+        </div>
         <div class="about__body">
           <p>
             Adam Eivy is a Seattle artist and technologist who writes songs and builds the videos
-            for them in PortOS, his own open source creative system. The full process is written
-            up on <a href="https://antic.substack.com/p/music-video-production" target="_blank" rel="noopener">Substack</a>.
-            Two decades of software, comics, card games and talks are still on the
-            <a href="classic.html">classic portfolio</a>.
+            for them in PortOS, his own open source creative system. The process is written up on
+            <a href="https://antic.substack.com/p/music-video-production" target="_blank" rel="noopener">Substack</a>,
+            and the <a href="statement.html">artist statement</a> says why. Earlier work in software,
+            comics and card games is on the <a href="classic.html">classic portfolio</a>.
           </p>
           <ul class="social" aria-label="Elsewhere">
             <li><a href="https://www.youtube.com/@atomantic" rel="me noopener" target="_blank">YouTube</a></li>
@@ -127,20 +110,18 @@
     </main>
 
     <footer class="footer">
-      <p class="mono">© <span id="year">2026</span> Adam Eivy</p>
-      <a class="mono" href="#top">Back to top ↑</a>
+      <div class="footer__inner">
+        <p class="label">© <span id="year">2026</span> Adam Eivy</p>
+        <a class="label" href="#work">Back to the work ↑</a>
+      </div>
     </footer>
 
-    <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+    <div class="toast label" id="toast" role="status" aria-live="polite"></div>
 
     <noscript>
-      <p class="noscript">
-        This page needs JavaScript to load the videos. Watch them on
-        <a href="https://www.youtube.com/@atomantic">YouTube</a>.
-      </p>
+      <p class="noscript">This page needs JavaScript to show the videos. Watch them on <a href="https://www.youtube.com/@atomantic">YouTube</a>.</p>
     </noscript>
 
-    <!-- Icon sprite -->
     <svg width="0" height="0" style="position: absolute" aria-hidden="true">
       <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></symbol>
       <symbol id="i-x" viewBox="0 0 24 24"><path d="M18.2 2.3h3.4l-7.4 8.4 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9L.8 2.3h7l4.8 6.4 5.6-6.4Zm-1.2 17.9h1.9L7 4.2H5l12 16Z"/></symbol>

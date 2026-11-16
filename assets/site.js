@@ -7,7 +7,7 @@
   // Platform metadata for link pills, in display order.
   var PLATFORMS = [
     { key: "youtube", label: "YouTube", icon: "i-youtube", brand: "#ff0033" },
-    { key: "x", label: "X post", icon: "i-x", brand: "#f2efe9" },
+    { key: "x", label: "X post", icon: "i-x", brand: "var(--ink)" },
     { key: "spotify", label: "Spotify", icon: "i-spotify", brand: "#1ed760" },
     { key: "appleMusic", label: "Apple Music", icon: "i-apple", brand: "#fa2d48" },
     { key: "suno", label: "Suno", icon: "i-suno", brand: "#f5c542" },
@@ -148,8 +148,8 @@
     playing = null;
   }
 
-  function buildMedia(v, opts) {
-    var media = el("div", { class: "media" + (opts && opts.large ? " media--large" : "") });
+  function buildMedia(v) {
+    var media = el("div", { class: "media" });
     var canPlay = !!(v.youtube || v.video);
 
     function renderPoster() {
@@ -163,12 +163,12 @@
         media.appendChild(btn);
       } else {
         media.appendChild(
-          el("div", { class: "media__soon mono" }, [el("span", { text: "Coming soon" })])
+          el("div", { class: "media__soon label" }, [el("span", { text: "Coming soon" })])
         );
       }
       media.appendChild(posterNode(v));
       if (v.runtime) {
-        media.appendChild(el("span", { class: "media__runtime mono", text: v.runtime }));
+        media.appendChild(el("span", { class: "media__runtime label", text: v.runtime }));
       }
     }
 
@@ -180,7 +180,6 @@
       media.classList.add("is-playing");
       media.appendChild(player);
       playing = { media: media, restore: renderPoster };
-      if (history.replaceState) history.replaceState(null, "", "#" + slugOf(v));
       if (player.tagName === "IFRAME") player.focus();
     }
 
@@ -248,81 +247,67 @@
 
   function metaLine(v) {
     var bits = [];
-    if (v.artist) bits.push(v.artist);
     if (v.year) bits.push(String(v.year));
     else if (v.date) bits.push(String(v.date).slice(0, 4));
     if (v.runtime) bits.push(v.runtime);
+    if (v.credits) bits.push(v.credits);
     return bits.join("  ·  ");
   }
 
-  // ---------- Cards ----------
-
-  function buildCard(v, i, total, kind) {
-    var slug = slugOf(v);
-    var media = buildMedia(v);
-    var label = kind === "short-film" ? "Film" : "MV";
-
-    var head = el("div", null, [
-      el("p", { class: "card__index mono" }, [
-        el("b", { text: pad(total - i) }),
-        el("span", { text: label + " / " + pad(total) }),
-        metaLine(v) ? el("span", { text: metaLine(v) }) : null,
-        v.placeholder ? el("span", { class: "placeholder-tag", text: "Placeholder" }) : null
-      ]),
-      el("h3", { class: "card__title" }, [el("a", { href: "#" + slug, text: v.title })])
-    ]);
-
-    var detail = el("div", null, [
-      v.description ? el("p", { class: "card__desc", text: v.description }) : null,
-      v.credits ? el("p", { class: "card__credits mono", text: v.credits }) : null,
-      buildLinks(v)
-    ]);
-
-    var card = el("li", { class: "card", id: slug }, [media, el("div", { class: "card__body" }, [head, detail])]);
-    card._play = media._play;
-    return card;
+  function kindLabel(v) {
+    return v.type === "short-film" ? "Short film" : "Music video";
   }
 
-  // ---------- Showcase: stage + filmstrip of every project ----------
+  // Release number: oldest video in each type is No. 01.
+  function numberAll(list) {
+    var counts = {};
+    for (var i = list.length - 1; i >= 0; i--) {
+      var t = list[i].type || "music-video";
+      counts[t] = (counts[t] || 0) + 1;
+      list[i]._no = counts[t];
+    }
+  }
+
+  // ---------- Showcase: player, details and a strip of every project ----------
 
   function buildShowcase(videos, startIndex) {
-    var stage = document.getElementById("stage");
-    var strip = document.getElementById("strip");
-    if (!stage || !strip || !videos.length) return null;
+    var root = document.getElementById("stage");
+    if (!root || !videos.length) return null;
     var total = videos.length;
     var current = -1;
     var thumbs = [];
 
     var mediaSlot = el("div", { class: "stage__media" });
-    var counter = el("p", { class: "stage__counter mono" });
-    var kind = el("p", { class: "stage__kind mono" });
-    var title = el("h2", { class: "stage__title" });
-    var meta = el("p", { class: "stage__meta mono" });
-    var desc = el("p", { class: "stage__desc" });
-    var linksSlot = el("div", { class: "stage__links" });
+    var no = el("span", { class: "stage__no label" });
+    var kind = el("span", { class: "stage__kind label" });
+    var title = el("h2", { class: "stage__title", id: "stage-title" });
     var prev = el("button", { type: "button", class: "nav-btn", "aria-label": "Previous project" }, [icon("i-prev")]);
     var next = el("button", { type: "button", class: "nav-btn", "aria-label": "Next project" }, [icon("i-next")]);
-    var progress = el("div", { class: "stage__progress", "aria-hidden": "true" });
+    var meta = el("p", { class: "stage__meta label" });
+    var desc = el("p", { class: "stage__desc" });
+    var linksSlot = el("div", { class: "stage__links" });
+    var strip = el("ol", { class: "strip", "aria-label": "All projects" });
 
-    var info = el("div", { class: "stage__info", "aria-live": "polite" }, [
-      el("div", { class: "stage__top" }, [counter, el("div", { class: "stage__arrows" }, [prev, next])]),
-      progress,
-      el("div", { class: "stage__text" }, [kind, title, meta, desc, linksSlot])
+    var head = el("div", { class: "stage__head" }, [
+      el("div", { class: "stage__eyebrow" }, [no, kind]),
+      el("div", { class: "stage__titlerow" }, [title, el("div", { class: "stage__arrows" }, [prev, next])])
     ]);
-    stage.appendChild(mediaSlot);
-    stage.appendChild(info);
+    var detail = el("div", { class: "stage__detail", "aria-live": "polite" }, [meta, desc, linksSlot]);
+    var rail = el("div", { class: "stage__rail" }, [strip]);
+
+    root.appendChild(mediaSlot);
+    root.appendChild(head);
+    root.appendChild(rail);
+    root.appendChild(detail);
 
     videos.forEach(function (v, i) {
-      var label = v.type === "short-film" ? "Short film" : "Music video";
-      var btn = el("button", { type: "button", class: "thumb", "aria-label": v.title + ", " + label }, [
+      var btn = el("button", { type: "button", class: "thumb", "aria-label": "Show " + v.title }, [
         el("span", { class: "thumb__img" }, [posterNode(v)]),
-        el("span", { class: "thumb__text" }, [
-          el("span", { class: "thumb__num mono", text: label + (v.year ? "  ·  " + v.year : "") }),
-          el("span", { class: "thumb__title", text: v.title })
-        ])
+        el("span", { class: "thumb__no label", text: "No. " + pad(v._no) + (v.year ? "  ·  " + v.year : "") }),
+        el("span", { class: "thumb__title", text: v.title })
       ]);
       btn.addEventListener("click", function () {
-        select(i, { scroll: false });
+        select(i);
       });
       thumbs.push(btn);
       strip.appendChild(el("li", null, [btn]));
@@ -330,21 +315,23 @@
 
     function select(i, opts) {
       i = (i + total) % total;
-      if (i === current) return;
+      if (i === current) {
+        if (opts && opts.play) mediaSlot.firstChild._play();
+        return;
+      }
       current = i;
       var v = videos[i];
-      if (playing && stage.contains(playing.media)) playing = null;
+      if (playing && root.contains(playing.media)) playing = null;
 
-      var media = buildMedia(v, { large: true });
+      var media = buildMedia(v);
       mediaSlot.textContent = "";
       mediaSlot.appendChild(media);
-      stage._play = media._play;
       mediaSlot.classList.remove("is-swap");
       void mediaSlot.offsetWidth;
       mediaSlot.classList.add("is-swap");
 
-      counter.textContent = pad(i + 1) + " / " + pad(total);
-      kind.textContent = v.type === "short-film" ? "Short film" : "Music video";
+      no.textContent = "No. " + pad(v._no);
+      kind.textContent = kindLabel(v);
       title.textContent = v.title;
       var m = metaLine(v);
       meta.textContent = m;
@@ -353,19 +340,18 @@
       desc.hidden = !v.description;
       linksSlot.textContent = "";
       linksSlot.appendChild(buildLinks(v));
-      progress.style.setProperty("--p", ((i + 1) / total) * 100 + "%");
 
       thumbs.forEach(function (t, j) {
         t.classList.toggle("is-active", j === i);
         if (j === i) t.setAttribute("aria-current", "true");
         else t.removeAttribute("aria-current");
       });
-      // Keep the active thumbnail in view inside the strip without moving the page.
       var t = thumbs[i];
-      var rail = strip.parentNode;
-      var left = t.parentNode.offsetLeft - (rail.clientWidth - t.offsetWidth) / 2;
-      rail.scrollTo({ left: Math.max(0, left), behavior: opts && opts.instant ? "auto" : "smooth" });
-
+      if (rail.scrollWidth > rail.clientWidth) {
+        var left = t.parentNode.offsetLeft - (rail.clientWidth - t.offsetWidth) / 2;
+        rail.scrollTo({ left: Math.max(0, left), behavior: opts && opts.instant ? "auto" : "smooth" });
+      }
+      if (!(opts && opts.instant) && history.replaceState) history.replaceState(null, "", "#" + slugOf(v));
       if (opts && opts.play) media._play();
     }
 
@@ -376,8 +362,7 @@
       select(current + 1);
     });
 
-    var showcase = document.getElementById("showcase");
-    showcase.addEventListener("keydown", function (e) {
+    root.addEventListener("keydown", function (e) {
       if (e.target.tagName === "IFRAME") return;
       if (e.key === "ArrowLeft") {
         select(current - 1);
@@ -388,7 +373,6 @@
       }
     });
 
-    // Swipe on the stage media (touch), when not playing.
     var x0 = null;
     mediaSlot.addEventListener("touchstart", function (e) {
       x0 = e.touches[0].clientX;
@@ -401,36 +385,69 @@
     });
 
     select(startIndex || 0, { instant: true });
-    return { select: select };
+    return {
+      select: select,
+      indexOf: function (slug) {
+        for (var k = 0; k < total; k++) if (slugOf(videos[k]) === slug) return k;
+        return -1;
+      }
+    };
   }
 
-  function renderGrid(gridId, countId, items, kind) {
-    var grid = document.getElementById(gridId);
-    var count = document.getElementById(countId);
-    if (!grid) return [];
-    grid.textContent = "";
-    var cards = [];
+  // ---------- Index: one line per project ----------
 
-    if (!items.length) {
-      if (count) count.textContent = "In production";
-      grid.appendChild(
-        el("li", { class: "empty" }, [
-          el("div", null, [
-            el("p", { class: "empty__title", text: kind === "short-film" ? "Short films are coming." : "Videos are coming." }),
-            el("p", { text: "Subscribe on YouTube to catch the first one when it drops." })
-          ])
+  function compactLinks(v) {
+    var links = v.links || {};
+    var list = el("ul", { class: "mini-links", "aria-label": "Links for " + v.title });
+    PLATFORMS.forEach(function (p) {
+      if (!links[p.key]) return;
+      list.appendChild(
+        el("li", null, [
+          el("a", { href: links[p.key], target: "_blank", rel: "noopener", title: p.label, "aria-label": v.title + " on " + p.label }, [icon(p.icon)])
         ])
       );
-      return cards;
+    });
+    return list;
+  }
+
+  function renderIndex(music, films) {
+    var body = document.getElementById("index-list");
+    if (!body) return;
+    body.textContent = "";
+
+    function group(name, items, emptyText) {
+      body.appendChild(el("li", { class: "index__group label" }, [
+        el("span", { text: name }),
+        el("span", { text: items.length ? items.length + (items.length === 1 ? " title" : " titles") : "In production" })
+      ]));
+      if (!items.length) {
+        body.appendChild(el("li", { class: "index__row index__row--empty" }, [
+          el("span", { class: "index__no label", text: "—" }),
+          el("span", { class: "index__title index__title--empty", text: emptyText })
+        ]));
+        return;
+      }
+      items.forEach(function (v) {
+        var a = el("a", { href: "#" + slugOf(v), class: "index__title" }, [v.title]);
+        a.addEventListener("click", function (e) {
+          if (!showcase) return;
+          var i = showcase.indexOf(slugOf(v));
+          if (i < 0) return;
+          e.preventDefault();
+          document.getElementById("work").scrollIntoView({ behavior: "smooth", block: "start" });
+          showcase.select(i, { play: true });
+        });
+        body.appendChild(el("li", { class: "index__row" }, [
+          el("span", { class: "index__no label", text: pad(v._no) }),
+          a,
+          el("span", { class: "index__year label", text: v.year ? String(v.year) : "" }),
+          compactLinks(v)
+        ]));
+      });
     }
 
-    if (count) count.textContent = items.length + (items.length === 1 ? " title" : " titles");
-    items.forEach(function (v, i) {
-      var card = buildCard(v, i, items.length, kind);
-      grid.appendChild(card);
-      cards.push(card);
-    });
-    return cards;
+    group("Music videos", music);
+    group("Short films", films, "First short film in production");
   }
 
   function wireChannel(channel) {
@@ -445,29 +462,6 @@
     });
   }
 
-  function reveal(cards) {
-    if (!("IntersectionObserver" in window)) {
-      cards.forEach(function (c) {
-        c.classList.add("is-in");
-      });
-      return;
-    }
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-in");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -8% 0px" }
-    );
-    cards.forEach(function (c) {
-      io.observe(c);
-    });
-  }
-
   function init(data) {
     var videos = (data && data.videos) || [];
     var music = videos.filter(function (v) {
@@ -476,44 +470,25 @@
     var films = videos.filter(function (v) {
       return v.type === "short-film";
     });
-
+    numberAll(music);
+    numberAll(films);
     wireChannel(data.channel);
 
-    var showcaseList = music.concat(films);
-    var featuredIdx = Math.max(
-      0,
-      showcaseList.findIndex(function (v) {
-        return v.featured;
-      })
-    );
-    var hashIdx = showcaseList.findIndex(function (v) {
+    var list = videos.slice();
+    var featuredIdx = list.findIndex(function (v) {
+      return v.featured;
+    });
+    var hashIdx = list.findIndex(function (v) {
       return "#" + slugOf(v) === location.hash;
     });
-    showcase = buildShowcase(showcaseList, hashIdx >= 0 ? hashIdx : featuredIdx);
+    showcase = buildShowcase(list, hashIdx >= 0 ? hashIdx : Math.max(0, featuredIdx));
+    renderIndex(music, films);
 
-    var cards = renderGrid("work-grid", "work-count", music, "music-video").concat(
-      renderGrid("films-grid", "films-count", films, "short-film")
-    );
-    reveal(cards);
-    if (hashIdx >= 0) {
-      var sc = document.getElementById("showcase");
-      if (sc) sc.scrollIntoView({ block: "start" });
-    }
-
-    // Clicking a title link plays that card.
-    document.addEventListener("click", function (e) {
-      var a = e.target.closest && e.target.closest(".card__title a");
-      if (!a) return;
-      var id = a.getAttribute("href").slice(1);
-      var card = document.getElementById(id);
-      if (card && card._play) {
-        e.preventDefault();
-        card.scrollIntoView({ block: "start", behavior: "smooth" });
-        card._play();
-      }
+    window.addEventListener("hashchange", function () {
+      if (!showcase) return;
+      var i = showcase.indexOf(location.hash.slice(1));
+      if (i >= 0) showcase.select(i);
     });
-
-    // Escape stops the current video.
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") stopPlaying();
     });
@@ -529,18 +504,13 @@
     })
     .then(init)
     .catch(function (err) {
-      var grid = document.getElementById("work-grid");
-      if (grid) {
-        grid.appendChild(
-          el("li", { class: "empty" }, [
-            el("div", null, [
-              el("p", { class: "empty__title", text: "Couldn't load the videos." }),
-              el("p", null, [
-                "Watch them on ",
-                el("a", { href: "https://www.youtube.com/@atomantic", text: "YouTube" }),
-                " instead."
-              ])
-            ])
+      var stage = document.getElementById("stage");
+      if (stage) {
+        stage.appendChild(
+          el("p", { class: "load-error" }, [
+            "The videos didn't load. You can watch them all on ",
+            el("a", { href: "https://www.youtube.com/@atomantic", target: "_blank", rel: "noopener", text: "YouTube" }),
+            "."
           ])
         );
       }

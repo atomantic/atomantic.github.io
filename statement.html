@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Artist Statement | Adam Eivy</title>
     <meta name="description" content="Artist statement and bio for Adam Eivy: we make art to dream bigger." />
-    <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0d1c" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#e9ecf4" media="(prefers-color-scheme: light)" />
     <meta name="color-scheme" content="dark light" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Artist Statement | Adam Eivy" />
@@ -25,33 +25,33 @@
     <link rel="stylesheet" href="assets/site.css" />
   </head>
   <body>
-    <header class="masthead" id="top">
-      <a class="wordmark" href="./" aria-label="Adam Eivy, home">
-        <span>Adam</span><span>Eivy</span>
-      </a>
-      <nav class="nav" aria-label="Sections">
-        <a href="./#work">Videos</a>
-        <a href="./#films">Films</a>
-        <a href="statement.html" aria-current="page">Statement</a>
-      </nav>
-      <div class="cta-group cta-group--compact">
-        <a class="btn btn--yt" href="https://www.youtube.com/@atomantic?sub_confirmation=1" target="_blank" rel="noopener" aria-label="Subscribe on YouTube">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube" /></svg><span class="btn__label">Subscribe</span>
-        </a>
-        <a class="btn btn--x" href="https://x.com/intent/follow?screen_name=antic" target="_blank" rel="noopener" aria-label="Follow @antic on X">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x" /></svg><span class="btn__label">Follow</span>
-        </a>
+    <header class="masthead">
+      <div class="masthead__inner">
+        <a class="wordmark" href="./" aria-label="Adam Eivy, home"><span>Adam</span> <span>Eivy</span></a>
+        <nav class="nav" aria-label="Sections">
+          <a href="./#work">Work</a>
+          <a href="./#index">Index</a>
+          <a href="statement.html" aria-current="page">Statement</a>
+        </nav>
+        <div class="follow">
+          <a class="btn btn--yt" href="https://www.youtube.com/@atomantic?sub_confirmation=1" target="_blank" rel="noopener" aria-label="Subscribe on YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube" /></svg><span class="btn__label">Subscribe</span>
+          </a>
+          <a class="btn btn--x" href="https://x.com/intent/follow?screen_name=antic" target="_blank" rel="noopener" aria-label="Follow @antic on X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x" /></svg><span class="btn__label">Follow</span>
+          </a>
+        </div>
       </div>
     </header>
 
     <main class="statement">
       <header class="statement__head">
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Artist statement</p>
+        <p class="eyebrow label"><span class="dot" aria-hidden="true"></span> Artist statement</p>
         <h1 class="statement__title">We make art to <em>dream bigger.</em></h1>
       </header>
 
       <section class="statement__grid" aria-labelledby="st-label">
-        <p class="statement__label mono" id="st-label">Statement</p>
+        <p class="statement__label label" id="st-label">Statement</p>
         <div class="prose">
           <p>
             I make music videos, and now short films, about the questions that keep me up at
@@ -77,7 +77,7 @@
       </section>
 
       <section class="statement__grid" aria-labelledby="bio-label">
-        <p class="statement__label mono" id="bio-label">Bio</p>
+        <p class="statement__label label" id="bio-label">Bio</p>
         <div class="prose prose--plain">
           <p>
             Adam Eivy is a Seattle-based artist and technologist. After two decades building
@@ -91,25 +91,27 @@
       </section>
 
       <section class="statement__grid" aria-labelledby="facts-label">
-        <p class="statement__label mono" id="facts-label">At a glance</p>
+        <p class="statement__label label" id="facts-label">At a glance</p>
         <dl class="facts">
-          <dt class="mono">Based in</dt>
+          <dt class="label">Based in</dt>
           <dd>Seattle, Washington</dd>
-          <dt class="mono">Work</dt>
-          <dd><a href="./#work">Music videos</a> · <a href="./#films">Short films</a></dd>
-          <dt class="mono">Watch</dt>
+          <dt class="label">Work</dt>
+          <dd><a href="./#index">Music videos and short films</a></dd>
+          <dt class="label">Watch</dt>
           <dd><a href="https://www.youtube.com/@atomantic" target="_blank" rel="noopener">youtube.com/@atomantic</a></dd>
-          <dt class="mono">Follow</dt>
+          <dt class="label">Follow</dt>
           <dd><a href="https://x.com/antic" target="_blank" rel="noopener">x.com/antic</a></dd>
-          <dt class="mono">Contact</dt>
+          <dt class="label">Contact</dt>
           <dd>atomantic at gmail dot com</dd>
         </dl>
       </section>
     </main>
 
     <footer class="footer">
-      <p class="mono">© 2026 Adam Eivy</p>
-      <a class="mono" href="./">← Back to the work</a>
+      <div class="footer__inner">
+        <p class="label">© 2026 Adam Eivy</p>
+        <a class="label" href="./">← Back to the work</a>
+      </div>
     </footer>
 
     <svg width="0" height="0" style="position: absolute" aria-hidden="true">
