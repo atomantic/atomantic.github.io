@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Adam Eivy | Music Videos &amp; Short Films</title>
-    <meta name="description" content="Music videos and short films by Adam Eivy. Watch them here, then follow on X and subscribe on YouTube for the next one." />
+    <meta name="description" content="Music videos and short films by Adam Eivy. The point of art is to have better dreams." />
     <meta name="theme-color" content="#0a0a0b" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Adam Eivy | Music Videos &amp; Short Films" />
-    <meta property="og:description" content="Music videos and short films by Adam Eivy." />
+    <meta property="og:description" content="The point of art is to have better dreams. Music videos and short films by Adam Eivy." />
     <meta property="og:url" content="https://adameivy.com/" />
     <meta property="og:image" content="https://i.ytimg.com/vi/l4O27yxXgek/maxresdefault.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -33,42 +33,36 @@
         <span>Adam</span><span>Eivy</span>
       </a>
       <nav class="nav" aria-label="Sections">
-        <a href="#work">Videos</a>
+                <a href="#work">Videos</a>
         <a href="#films">Films</a>
-        <a href="#about">About</a>
+        <a href="statement.html">Statement</a>
       </nav>
       <div class="cta-group cta-group--compact" data-cta>
-        <a class="btn btn--yt" data-cta-yt href="https://www.youtube.com/@atomantic?sub_confirmation=1" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube" /></svg><span>Subscribe</span>
+        <a class="btn btn--yt" data-cta-yt href="https://www.youtube.com/@atomantic?sub_confirmation=1" target="_blank" rel="noopener" aria-label="Subscribe on YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube" /></svg><span class="btn__label">Subscribe</span>
         </a>
-        <a class="btn btn--x" data-cta-x href="https://x.com/intent/follow?screen_name=antic" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x" /></svg><span>Follow</span>
+        <a class="btn btn--x" data-cta-x href="https://x.com/intent/follow?screen_name=antic" target="_blank" rel="noopener" aria-label="Follow @antic on X">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x" /></svg><span class="btn__label">Follow</span>
         </a>
       </div>
     </header>
 
     <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__copy">
-          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> New video out now</p>
-          <h1 id="hero-title" class="hero__title">
-            Moving <em>pictures</em><br />
-            for sound.
-          </h1>
+      <section class="intro" aria-labelledby="hero-title">
+        <h1 id="hero-title" class="hero__title">The point of art is to have <em>better dreams.</em></h1>
+        <div class="intro__side">
           <p class="hero__lede">
-            Original songs and music videos, with short films on the way. Press play on anything
-            here, then subscribe so you catch the next one.
+            Music videos and short films by Adam Eivy. Pick a project below to watch it here.
           </p>
-          <div class="cta-group" data-cta>
-            <a class="btn btn--yt btn--lg" data-cta-yt href="https://www.youtube.com/@atomantic?sub_confirmation=1" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube" /></svg><span>Subscribe on YouTube</span>
-            </a>
-            <a class="btn btn--x btn--lg" data-cta-x href="https://x.com/intent/follow?screen_name=antic" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x" /></svg><span>Follow @antic</span>
-            </a>
-          </div>
+          <a class="text-link mono" href="statement.html">Read the artist statement →</a>
         </div>
-        <div class="hero__feature" id="feature"></div>
+      </section>
+
+      <section class="showcase" id="showcase" aria-label="Projects">
+        <div class="showcase__stage" id="stage"></div>
+        <div class="showcase__rail">
+          <ol class="strip" id="strip" aria-label="All projects"></ol>
+        </div>
       </section>
 
       <section class="reel" id="work" aria-labelledby="work-title">
@@ -135,16 +129,6 @@
       <a class="mono" href="#top">Back to top ↑</a>
     </footer>
 
-    <!-- Sticky follow bar on phones -->
-    <div class="dock" data-cta aria-label="Follow">
-      <a class="btn btn--yt" data-cta-yt href="https://www.youtube.com/@atomantic?sub_confirmation=1" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-youtube" /></svg><span>Subscribe</span>
-      </a>
-      <a class="btn btn--x" data-cta-x href="https://x.com/intent/follow?screen_name=antic" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x" /></svg><span>Follow @antic</span>
-      </a>
-    </div>
-
     <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
 
     <noscript>
@@ -163,6 +147,8 @@
       <symbol id="i-suno" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a6 6 0 0 1 0 12 1 1 0 0 1 0-2 4 4 0 0 0 0-8 1 1 0 0 1 0-2Zm0 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"/></symbol>
       <symbol id="i-link" viewBox="0 0 24 24"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l3.4-3.4a1 1 0 1 1 1.4 1.4L12 13.4a1 1 0 0 1-1.4 0Zm-1.8 5.4a4 4 0 0 1-5.6-5.6l2.5-2.5a1 1 0 1 1 1.4 1.4l-2.5 2.5a2 2 0 0 0 2.8 2.8l2.5-2.5a1 1 0 1 1 1.4 1.4l-2.5 2.5Zm9.4-7.4a1 1 0 0 1-1.4-1.4l2.5-2.5a2 2 0 0 0-2.8-2.8l-2.5 2.5a1 1 0 0 1-1.4-1.4l2.5-2.5a4 4 0 0 1 5.6 5.6l-2.5 2.5Z"/></symbol>
       <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 2.6 7.3 7.3l1.4 1.4L11 6.4V15h2V6.4l2.3 2.3 1.4-1.4L12 2.6ZM5 11v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9h-2v9H7v-9H5Z"/></symbol>
+      <symbol id="i-prev" viewBox="0 0 24 24"><path d="M15.4 5.4 14 4l-8 8 8 8 1.4-1.4L8.8 12l6.6-6.6Z"/></symbol>
+      <symbol id="i-next" viewBox="0 0 24 24"><path d="M8.6 18.6 10 20l8-8-8-8-1.6 1.4 6.6 6.6-6.4 6.6Z"/></symbol>
       <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5-13-7.5Z"/></symbol>
     </svg>
 

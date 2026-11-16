@@ -2,8 +2,10 @@
 
 Adam Eivy's portfolio of music videos and short films, live at https://adameivy.com.
 
-It is a static site with no build step: `index.html`, `assets/site.css`, `assets/site.js`
-and the catalog in `data/videos.json`.
+It is a static site with no build step: `index.html` (work), `statement.html` (artist
+statement and bio), `assets/site.css`, `assets/site.js` and the catalog in `data/videos.json`.
+The top of the home page is a showcase: a large player plus a filmstrip of every project,
+built from the same catalog.
 
 ## Add a video or film
 

@@ -19,6 +19,7 @@
   ];
 
   var playing = null; // { media, restore }
+  var showcase = null;
 
   function el(tag, attrs, children) {
     var node = document.createElement(tag);
@@ -282,25 +283,125 @@
     return card;
   }
 
-  function buildFeature(v) {
-    var wrap = document.getElementById("feature");
-    if (!wrap || !v) return;
-    var media = buildMedia(v, { large: true });
-    var featureLink = el("a", { href: "#" + slugOf(v), text: v.title });
-    featureLink.addEventListener("click", function (e) {
-      e.preventDefault();
-      media._play();
+  // ---------- Showcase: stage + filmstrip of every project ----------
+
+  function buildShowcase(videos, startIndex) {
+    var stage = document.getElementById("stage");
+    var strip = document.getElementById("strip");
+    if (!stage || !strip || !videos.length) return null;
+    var total = videos.length;
+    var current = -1;
+    var thumbs = [];
+
+    var mediaSlot = el("div", { class: "stage__media" });
+    var counter = el("p", { class: "stage__counter mono" });
+    var kind = el("p", { class: "stage__kind mono" });
+    var title = el("h2", { class: "stage__title" });
+    var meta = el("p", { class: "stage__meta mono" });
+    var desc = el("p", { class: "stage__desc" });
+    var linksSlot = el("div", { class: "stage__links" });
+    var prev = el("button", { type: "button", class: "nav-btn", "aria-label": "Previous project" }, [icon("i-prev")]);
+    var next = el("button", { type: "button", class: "nav-btn", "aria-label": "Next project" }, [icon("i-next")]);
+    var progress = el("div", { class: "stage__progress", "aria-hidden": "true" });
+
+    var info = el("div", { class: "stage__info", "aria-live": "polite" }, [
+      el("div", { class: "stage__top" }, [counter, el("div", { class: "stage__arrows" }, [prev, next])]),
+      progress,
+      el("div", { class: "stage__text" }, [kind, title, meta, desc, linksSlot])
+    ]);
+    stage.appendChild(mediaSlot);
+    stage.appendChild(info);
+
+    videos.forEach(function (v, i) {
+      var label = v.type === "short-film" ? "Short film" : "Music video";
+      var btn = el("button", { type: "button", class: "thumb", "aria-label": v.title + ", " + label }, [
+        el("span", { class: "thumb__img" }, [posterNode(v)]),
+        el("span", { class: "thumb__text" }, [
+          el("span", { class: "thumb__num mono", text: label + (v.year ? "  ·  " + v.year : "") }),
+          el("span", { class: "thumb__title", text: v.title })
+        ])
+      ]);
+      btn.addEventListener("click", function () {
+        select(i, { scroll: false });
+      });
+      thumbs.push(btn);
+      strip.appendChild(el("li", null, [btn]));
     });
-    wrap.appendChild(media);
-    wrap.appendChild(
-      el("div", { class: "feature__meta" }, [
-        el("div", null, [
-          el("p", { class: "feature__label mono", text: "Latest release" }),
-          el("h2", { class: "feature__title" }, [featureLink])
-        ]),
-        buildLinks(v)
-      ])
-    );
+
+    function select(i, opts) {
+      i = (i + total) % total;
+      if (i === current) return;
+      current = i;
+      var v = videos[i];
+      if (playing && stage.contains(playing.media)) playing = null;
+
+      var media = buildMedia(v, { large: true });
+      mediaSlot.textContent = "";
+      mediaSlot.appendChild(media);
+      stage._play = media._play;
+      mediaSlot.classList.remove("is-swap");
+      void mediaSlot.offsetWidth;
+      mediaSlot.classList.add("is-swap");
+
+      counter.textContent = pad(i + 1) + " / " + pad(total);
+      kind.textContent = v.type === "short-film" ? "Short film" : "Music video";
+      title.textContent = v.title;
+      var m = metaLine(v);
+      meta.textContent = m;
+      meta.hidden = !m;
+      desc.textContent = v.description || "";
+      desc.hidden = !v.description;
+      linksSlot.textContent = "";
+      linksSlot.appendChild(buildLinks(v));
+      progress.style.setProperty("--p", ((i + 1) / total) * 100 + "%");
+
+      thumbs.forEach(function (t, j) {
+        t.classList.toggle("is-active", j === i);
+        if (j === i) t.setAttribute("aria-current", "true");
+        else t.removeAttribute("aria-current");
+      });
+      // Keep the active thumbnail in view inside the strip without moving the page.
+      var t = thumbs[i];
+      var rail = strip.parentNode;
+      var left = t.parentNode.offsetLeft - (rail.clientWidth - t.offsetWidth) / 2;
+      rail.scrollTo({ left: Math.max(0, left), behavior: opts && opts.instant ? "auto" : "smooth" });
+
+      if (opts && opts.play) media._play();
+    }
+
+    prev.addEventListener("click", function () {
+      select(current - 1);
+    });
+    next.addEventListener("click", function () {
+      select(current + 1);
+    });
+
+    var showcase = document.getElementById("showcase");
+    showcase.addEventListener("keydown", function (e) {
+      if (e.target.tagName === "IFRAME") return;
+      if (e.key === "ArrowLeft") {
+        select(current - 1);
+        e.preventDefault();
+      } else if (e.key === "ArrowRight") {
+        select(current + 1);
+        e.preventDefault();
+      }
+    });
+
+    // Swipe on the stage media (touch), when not playing.
+    var x0 = null;
+    mediaSlot.addEventListener("touchstart", function (e) {
+      x0 = e.touches[0].clientX;
+    }, { passive: true });
+    mediaSlot.addEventListener("touchend", function (e) {
+      if (x0 == null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      x0 = null;
+      if (Math.abs(dx) > 50 && !mediaSlot.querySelector(".is-playing")) select(current + (dx < 0 ? 1 : -1));
+    });
+
+    select(startIndex || 0, { instant: true });
+    return { select: select };
   }
 
   function renderGrid(gridId, countId, items, kind) {
@@ -367,17 +468,6 @@
     });
   }
 
-  function openFromHash(cards) {
-    var id = decodeURIComponent(location.hash.slice(1));
-    if (!id) return;
-    var card = cards.filter(function (c) {
-      return c.id === id;
-    })[0];
-    if (!card) return;
-    card.classList.add("is-in");
-    card.scrollIntoView({ block: "start" });
-  }
-
   function init(data) {
     var videos = (data && data.videos) || [];
     var music = videos.filter(function (v) {
@@ -389,17 +479,26 @@
 
     wireChannel(data.channel);
 
-    var featured =
-      videos.filter(function (v) {
+    var showcaseList = music.concat(films);
+    var featuredIdx = Math.max(
+      0,
+      showcaseList.findIndex(function (v) {
         return v.featured;
-      })[0] || videos[0];
-    buildFeature(featured);
+      })
+    );
+    var hashIdx = showcaseList.findIndex(function (v) {
+      return "#" + slugOf(v) === location.hash;
+    });
+    showcase = buildShowcase(showcaseList, hashIdx >= 0 ? hashIdx : featuredIdx);
 
     var cards = renderGrid("work-grid", "work-count", music, "music-video").concat(
       renderGrid("films-grid", "films-count", films, "short-film")
     );
     reveal(cards);
-    openFromHash(cards);
+    if (hashIdx >= 0) {
+      var sc = document.getElementById("showcase");
+      if (sc) sc.scrollIntoView({ block: "start" });
+    }
 
     // Clicking a title link plays that card.
     document.addEventListener("click", function (e) {
@@ -419,27 +518,6 @@
       if (e.key === "Escape") stopPlaying();
     });
   }
-
-  // Phone dock: slide in once the hero buttons scroll away, hide while another CTA block is on screen.
-  (function dock() {
-    var bar = document.querySelector(".dock");
-    var blocks = document.querySelectorAll("main [data-cta]");
-    if (!bar || !blocks.length || !("IntersectionObserver" in window)) return;
-    var visible = new Set();
-    var heroPassed = false;
-    var hero = blocks[0];
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) visible.add(e.target);
-        else visible.delete(e.target);
-        if (e.target === hero && !e.isIntersecting) heroPassed = e.boundingClientRect.top < 0;
-      });
-      bar.classList.toggle("is-on", heroPassed && visible.size === 0);
-    });
-    blocks.forEach(function (b) {
-      io.observe(b);
-    });
-  })();
 
   var y = document.getElementById("year");
   if (y) y.textContent = String(new Date().getFullYear());
