@@ -1,0 +1,256 @@
+/**
+ * Default theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+// This file has been copied over from
+// ../../lib/reveal.js/css/theme/source/default.scss
+
+// Default mixins and settings -----------------
+@import "../../lib/reveal.js/css/theme/template/mixins";
+@import "../../lib/reveal.js/css/theme/template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts ----------------
+@font-face {
+        font-family: 'League Gothic';
+        src: url('../../lib/font/league_gothic-webfont.eot');
+        src: url('../../lib/font/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+                 url('../../lib/font/league_gothic-webfont.woff') format('woff'),
+                 url('../../lib/font/league_gothic-webfont.ttf') format('truetype'),
+                 url('../../lib/font/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+
+        font-weight: normal;
+        font-style: normal;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+// ---------------------------------------------
+
+// Override theme settings ---------------------
+$heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+// Other options include e.g.
+// $mainFont: 'Open Sans', sans-serif;
+// $linkColor: #ed1dff;
+// $linkColorHover: $linkColor;
+// $headingFont: 'Montserrat', Impact, sans-serif;
+// $headingTextShadow: none;
+// $headingLetterSpacing: -0.03em;
+// $headingTextTransform: none;
+// $selectionBackgroundColor: #e0ad52;
+// $mainFontSize: 30px;
+// See ../../lib/reveal.js/css/theme/template/settings.scss for the full list.
+// ---------------------------------------------
+
+// Background generator ------------------------
+@mixin bodyBackground() {
+        @include radial-gradient( rgba(28,30,32,1), rgba(85,90,95,1) );
+}
+// ---------------------------------------------
+
+// Theme template ------------------------------
+@import "../../lib/reveal.js/css/theme/template/theme";
+// ---------------------------------------------
+
+// See ../../node_modules/reveal.js/css/theme/README.md
+// for further explanations on how reveal.js themes work.
+
+.reveal {
+
+
+  .alert {
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-shadow:none;
+    font-weight: 300;
+  }
+
+
+  .alert .alert-link {
+    font-weight: bold;
+  }
+
+  .alert-success, .alert-success a{
+    color: #468847;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+  }
+
+  .alert-detail, .alert-detail a{
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+  }
+
+  .alert-info, .alert-info a{
+    color: #3a87ad;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+  }
+
+  .alert-warning, .alert-warning a{
+    color: #f85;
+    background-color: #fcf8e3;
+    border-color: #fbeed5;
+  }
+
+  .alert-danger, .alert-danger a {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+  }
+  .big {
+    font-size: 120%;
+    line-height: 200%;
+  }
+  .navigate-right, .navigate-down {
+    cursor: pointer;
+  }
+  b.bot {
+    transition: 0.5s;
+    transition-delay: 1s;
+    display:inline-block;
+    transform: rotate(0deg);
+    font-family:serif;
+    color:#539199;
+  }
+  .present > h3 b.bot {
+    transform: rotate(-10deg);
+  }
+  figure {
+    >div {
+      max-width: 75%;
+      margin:0 auto 5px auto;
+      a {
+        display:inline-block;
+        img {
+          margin:0;
+        }
+      }
+    }
+  }
+  figcaption {
+    display: block;
+    position: relative;
+    margin: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    background: rgba(0,0,0,0.5);
+    color: #eee;
+    text-align: center;
+    padding: 10px;
+    z-index: 20;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  pre {
+    box-shadow:none;
+    font-size:12px;
+
+    code {
+      background-color: #000;
+      border: thin solid #ccc;
+      display:block;
+      font-size: 1.4em;
+      line-height: 1.4em;
+      .prompt {
+        color: #13DAEC;
+      }
+    }
+  }
+  pre.gpg {
+    font-size:4px;
+    width:70px;
+  }
+  section {
+    img {
+      border:none;
+    }
+    .group img {
+      margin: 5px 0;
+    }
+  }
+  .slide-background.present {
+    opacity:.5;
+  }
+  .welcome {
+    position:relative;
+    top:-50px;
+  }
+}
+
+.lightbox {
+    display: none;
+    position: absolute;
+    z-index: 25;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    img {
+      margin:auto;
+      position: absolute;
+      top: 0;
+      left:0;
+      right:0;
+      bottom: 0;
+      max-height:100%;
+      max-width:100%;
+    }
+
+    &:target {
+      display: block;
+      height:100%;
+      outline: none;
+    }
+}
+
+i.fa {
+  font: normal normal normal 14px/1 FontAwesome;
+}
+
+.social {
+  a {
+    display:inline-block;
+    margin: 0 5px;
+    img {
+      border:none;
+        border-radius:6px;
+        width:64px;
+        height:64px;
+        &:hover {
+            background-color:#69c;
+        }
+    }
+  }
+  i {
+    font-size:124px;
+    color: #13daec;
+    opacity:0.8;
+    &:hover {
+      opacity:1;
+      color: #71e9f4;
+      text-shadow: 2px 2px #333;
+    }
+    &.fa-deviantart,&.fa-facebook {
+      padding:8px 10px;
+      border-radius: 8px;
+      font-size:112px;
+    }
+  }
+}
+
+ul.small {
+  font-size:.8em;
+}
+
+i.navBtn {
+  font-size:40px;
+}
