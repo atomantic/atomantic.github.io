@@ -1,12 +1,13 @@
 {
-  "_readme": "Catalog for adameivy.com. Videos show in the order listed, so put the newest first. To add one, copy an entry, change the fields and push. `type` is \"music-video\" or \"short-film\". `youtube` is the 11-character video id (the part after youtu.be/); it plays inline and supplies the thumbnail. For a self-hosted file use `video` (an .mp4 URL) and `poster` instead. With neither, the player links out to the X post. `date` (YYYY-MM-DD) is optional. Every key in `links` is optional (without a `spotify` track link, the Spotify button opens the artist page from `channel.spotify`); extra links go in `links.other` as {\"label\", \"url\"}. Set `featured: true` on the one to show large at the top (otherwise the first entry is used).",
+  "_readme": "Catalog for adameivy.com. Videos show in the order listed, so put the newest first. To add one, copy an entry, change the fields and push. `type` is \"music-video\" or \"short-film\". `youtube` is the 11-character video id (the part after youtu.be/); it plays inline and supplies the thumbnail. For a self-hosted file use `video` (an .mp4 URL) and `poster` instead. With neither, the player links out to the X post. `date` (YYYY-MM-DD) is optional. Every key in `links` is optional (without a `spotify` or `appleMusic` track link, that button opens the artist page from `channel`); extra links go in `links.other` as {\"label\", \"url\"}. Set `featured: true` on the one to show large at the top (otherwise the first entry is used).",
   "channel": {
     "youtube": "https://www.youtube.com/@atomantic",
     "youtubeSubscribe": "https://www.youtube.com/@atomantic?sub_confirmation=1",
     "x": "https://x.com/antic",
     "xFollow": "https://x.com/intent/follow?screen_name=antic",
     "substack": "https://antic.substack.com",
-    "spotify": "https://open.spotify.com/artist/19RqPsiHt02T8POTbS9MDr"
+    "spotify": "https://open.spotify.com/artist/19RqPsiHt02T8POTbS9MDr",
+    "appleMusic": "https://music.apple.com/us/artist/atomantic/6819566059"
   },
   "videos": [
     {
