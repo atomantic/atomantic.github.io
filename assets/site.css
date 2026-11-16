@@ -889,7 +889,7 @@ img {
 }
 .intro .hero__title {
   font-size: clamp(42px, 5.6vw, 96px);
-  max-width: 13ch;
+  max-width: 12ch;
 }
 .intro__side {
   display: grid;
