@@ -19,6 +19,7 @@
   ];
 
   var playing = null; // { media, restore }
+  var channel = {};
   var showcase = null;
 
   function el(tag, attrs, children) {
@@ -161,6 +162,12 @@
         ]);
         btn.addEventListener("click", play);
         media.appendChild(btn);
+      } else if (v.links && v.links.x) {
+        media.appendChild(
+          el("a", { class: "media__play", href: v.links.x, target: "_blank", rel: "noopener", "aria-label": "Watch " + v.title + " on X" }, [
+            el("span", { class: "play-badge" }, [icon("i-x"), el("span", { text: "Watch on X" })])
+          ])
+        );
       } else {
         media.appendChild(
           el("div", { class: "media__soon label" }, [el("span", { text: "Coming soon" })])
@@ -190,8 +197,14 @@
 
   // ---------- Links ----------
 
+  function linksFor(v) {
+    var links = Object.assign({}, v.links || {});
+    if (!links.spotify && channel.spotify) links.spotify = channel.spotify;
+    return links;
+  }
+
   function buildLinks(v) {
-    var links = v.links || {};
+    var links = linksFor(v);
     var list = el("ul", { class: "links", "aria-label": "Listen and share " + v.title });
 
     PLATFORMS.forEach(function (p) {
@@ -397,7 +410,7 @@
   // ---------- Index: one line per project ----------
 
   function compactLinks(v) {
-    var links = v.links || {};
+    var links = linksFor(v);
     var list = el("ul", { class: "mini-links", "aria-label": "Links for " + v.title });
     PLATFORMS.forEach(function (p) {
       if (!links[p.key]) return;
@@ -472,7 +485,8 @@
     });
     numberAll(music);
     numberAll(films);
-    wireChannel(data.channel);
+    channel = data.channel || {};
+    wireChannel(channel);
 
     var list = videos.slice();
     var featuredIdx = list.findIndex(function (v) {

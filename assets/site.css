@@ -466,6 +466,7 @@ body::before {
   transition: transform 1s var(--ease);
 }
 .media__play {
+  text-decoration: none;
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -524,7 +525,7 @@ body::before {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   padding: 6%;
   background:
     radial-gradient(110% 90% at 20% 10%, hsla(var(--h, 230), 70%, 55%, 0.45), transparent 60%),

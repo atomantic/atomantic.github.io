@@ -1,11 +1,12 @@
 {
-  "_readme": "Catalog for adameivy.com. Videos show in the order listed, so put the newest first. To add one, copy an entry, change the fields and push. `type` is \"music-video\" or \"short-film\". `youtube` is the 11-character video id (the part after youtu.be/); it plays inline and supplies the thumbnail. For a self-hosted file use `video` (an .mp4 URL) and `poster` instead. Every key in `links` is optional; extra links go in `links.other` as {\"label\", \"url\"}. Set `featured: true` on the one to show large at the top (otherwise the first entry is used).",
+  "_readme": "Catalog for adameivy.com. Videos show in the order listed, so put the newest first. To add one, copy an entry, change the fields and push. `type` is \"music-video\" or \"short-film\". `youtube` is the 11-character video id (the part after youtu.be/); it plays inline and supplies the thumbnail. For a self-hosted file use `video` (an .mp4 URL) and `poster` instead. With neither, the player links out to the X post. `date` (YYYY-MM-DD) is optional. Every key in `links` is optional (without a `spotify` track link, the Spotify button opens the artist page from `channel.spotify`); extra links go in `links.other` as {\"label\", \"url\"}. Set `featured: true` on the one to show large at the top (otherwise the first entry is used).",
   "channel": {
     "youtube": "https://www.youtube.com/@atomantic",
     "youtubeSubscribe": "https://www.youtube.com/@atomantic?sub_confirmation=1",
     "x": "https://x.com/antic",
     "xFollow": "https://x.com/intent/follow?screen_name=antic",
-    "substack": "https://antic.substack.com"
+    "substack": "https://antic.substack.com",
+    "spotify": "https://open.spotify.com/artist/19RqPsiHt02T8POTbS9MDr"
   },
   "videos": [
     {
@@ -13,6 +14,7 @@
       "type": "music-video",
       "title": "Dream Tape",
       "year": 2026,
+      "date": "2026-11-14",
       "description": "The newest music video.",
       "youtube": "l4O27yxXgek",
       "featured": true,
@@ -22,17 +24,43 @@
       }
     },
     {
+      "slug": "nein-nicht-nie",
+      "type": "music-video",
+      "title": "Nein, Nicht, Nie",
+      "year": 2026,
+      "date": "2026-11-12",
+      "description": "",
+      "youtube": "",
+      "links": {
+        "x": "https://x.com/antic/status/2120993942653259838"
+      }
+    },
+    {
+      "slug": "doodle-drop",
+      "type": "music-video",
+      "title": "Doodle Drop",
+      "year": 2026,
+      "date": "2026-11-04",
+      "description": "",
+      "youtube": "",
+      "links": {
+        "x": "https://x.com/antic/status/2118108415742636042"
+      }
+    },
+    {
       "slug": "the-cutting-room-floor",
       "type": "music-video",
       "title": "The Cutting Room Floor",
       "year": 2026,
+      "date": "2026-10-16",
       "description": "The video that took the most iterations, and produced the most new tooling in PortOS along the way. The starting idea came from a Facebook reply to Scale of the Universe.",
       "youtube": "gRYIcpNLjfg",
       "links": {
         "youtube": "https://youtu.be/gRYIcpNLjfg",
         "spotify": "https://open.spotify.com/track/62n9XWqJPW7GwEzTNo1Lib",
         "appleMusic": "https://music.apple.com/us/album/cutting-room-floor/6823481229?i=6823481230",
-        "suno": "https://suno.com/song/0ae0d114-74ad-4b38-aae7-25e9837951fe"
+        "suno": "https://suno.com/song/0ae0d114-74ad-4b38-aae7-25e9837951fe",
+        "x": "https://x.com/antic/status/2110938486975213606"
       }
     },
     {
@@ -40,13 +68,15 @@
       "type": "music-video",
       "title": "Scale of the Universe",
       "year": 2026,
+      "date": "2026-10-09",
       "description": "Arrived while falling asleep, by way of Accelerando and the question of what a human-readable signal in SETI would even look like. Many shots were re-rendered and reordered before it felt right.",
       "youtube": "-fF36SjSjyo",
       "links": {
         "youtube": "https://youtu.be/-fF36SjSjyo",
         "spotify": "https://open.spotify.com/track/01kHkkvalBITmx2i4jbTI0",
         "appleMusic": "https://music.apple.com/us/album/scale-of-the-universe/6821487260?i=6821487261",
-        "suno": "https://suno.com/song/885b245d-8870-4a7d-aeea-cd9ad9f3610b"
+        "suno": "https://suno.com/song/885b245d-8870-4a7d-aeea-cd9ad9f3610b",
+        "x": "https://x.com/antic/status/2108582512960368715"
       }
     },
     {
@@ -61,7 +91,12 @@
         "spotify": "https://open.spotify.com/track/5BePPeE7K3jzFNdUbfuvF5",
         "appleMusic": "https://music.apple.com/us/album/you-are-the-room/6820512767?i=6820512768",
         "suno": "https://suno.com/song/62cd2904-a9ad-41fc-8097-c85cebe08586",
-        "other": [{ "label": "The X post that started it", "url": "https://x.com/antic/status/2102278546316267866" }]
+        "other": [
+          {
+            "label": "The X post that started it",
+            "url": "https://x.com/antic/status/2102278546316267866"
+          }
+        ]
       }
     },
     {
@@ -69,13 +104,15 @@
       "type": "music-video",
       "title": "Gain of Function",
       "year": 2026,
+      "date": "2026-09-30",
       "description": "Written after a long drive, thinking about wet labs and AI safety. The first voice memo was recorded on the side of the road.",
       "youtube": "XQgSZGIOleg",
       "links": {
         "youtube": "https://youtu.be/XQgSZGIOleg",
         "spotify": "https://open.spotify.com/track/32h5XGLh3Zz61LYiyxJkNJ",
         "appleMusic": "https://music.apple.com/us/album/gain-of-function/6820020098?i=6820020105",
-        "suno": "https://suno.com/song/6704070e-f5f4-464a-a927-bdaa4ebeb962"
+        "suno": "https://suno.com/song/6704070e-f5f4-464a-a927-bdaa4ebeb962",
+        "x": "https://x.com/antic/status/2105308911452790926"
       }
     }
   ]
