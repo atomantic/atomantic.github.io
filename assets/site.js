@@ -200,6 +200,7 @@
   function linksFor(v) {
     var links = Object.assign({}, v.links || {});
     if (!links.spotify && channel.spotify) links.spotify = channel.spotify;
+    if (!links.appleMusic && channel.appleMusic) links.appleMusic = channel.appleMusic;
     return links;
   }
 
