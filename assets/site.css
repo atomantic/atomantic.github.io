@@ -582,27 +582,21 @@ body::before {
   fill: currentColor;
 }
 
-/* ---------- Strip of every project ---------- */
+/* ---------- Every project at once: a wrapping grid, no sideways scrolling ---------- */
 
-.stage__rail {
-  overflow-x: auto;
-  margin-inline: calc(var(--gutter) * -1) calc(var(--gutter-r) * -1);
-  padding: 4px var(--gutter-r) 6px var(--gutter);
-  scroll-snap-type: x proximity;
-  scroll-padding-inline: var(--gutter);
-  scrollbar-width: thin;
-  scrollbar-color: var(--ink-3) transparent;
-}
 .strip {
-  display: flex;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(170px, 100%), 1fr));
+  gap: 18px 14px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.strip li {
-  flex: 0 0 clamp(150px, 15vw, 220px);
-  scroll-snap-align: start;
+@media (max-width: 480px) {
+  .strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 10px;
+  }
 }
 .thumb {
   display: grid;
@@ -1026,9 +1020,6 @@ a.index__title:hover {
   }
   .wordmark {
     font-size: 20px;
-  }
-  .strip li {
-    flex-basis: 44vw;
   }
   .stage__arrows .nav-btn {
     width: 36px;
