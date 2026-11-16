@@ -414,7 +414,7 @@
     var links = linksFor(v);
     var list = el("ul", { class: "mini-links", "aria-label": "Links for " + v.title });
     PLATFORMS.forEach(function (p) {
-      if (!links[p.key]) return;
+      if (!links[p.key] || p.key === "suno") return; // the Index row skips Suno
       list.appendChild(
         el("li", null, [
           el("a", { href: links[p.key], target: "_blank", rel: "noopener", title: p.label, "aria-label": v.title + " on " + p.label }, [icon(p.icon)])
