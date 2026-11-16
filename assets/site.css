@@ -9,6 +9,9 @@
   --ink-2: #a9a59e;
   --ink-3: #6d6a65;
   --line: rgba(242, 239, 233, 0.12);
+  --head-bg: rgba(10, 10, 11, 0.8);
+  --grain: 0.06;
+  --shadow-deep: rgba(0, 0, 0, 0.9);
   --accent: #ff4d1c;
   --accent-ink: #0a0a0b;
   --radius: 4px;
@@ -49,7 +52,7 @@ body::after {
   inset: -50%;
   pointer-events: none;
   z-index: 100;
-  opacity: 0.06;
+  opacity: var(--grain);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -99,7 +102,7 @@ img {
   gap: 16px;
   padding: 14px var(--gutter);
   padding-top: max(14px, env(safe-area-inset-top));
-  background: linear-gradient(to bottom, rgba(10, 10, 11, 0.92), rgba(10, 10, 11, 0.7));
+  background: var(--head-bg);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--line);
@@ -459,7 +462,7 @@ img {
   font-weight: 500;
   text-decoration: none;
   color: var(--ink);
-  background: rgba(242, 239, 233, 0.02);
+  background: color-mix(in srgb, var(--ink) 2%, transparent);
   transition: border-color 0.2s, background 0.2s, color 0.2s;
 }
 .links a:hover {
@@ -509,7 +512,7 @@ img {
   border-radius: var(--radius);
   overflow: hidden;
   background:
-    repeating-linear-gradient(90deg, transparent 0 46px, rgba(242, 239, 233, 0.035) 46px 48px),
+    repeating-linear-gradient(90deg, transparent 0 46px, color-mix(in srgb, var(--ink) 4%, transparent) 46px 48px),
     radial-gradient(80% 120% at 50% 120%, rgba(255, 77, 28, 0.18), transparent 60%),
     var(--bg-2);
 }
@@ -533,7 +536,7 @@ img {
   left: 0;
   right: 0;
   height: 18px;
-  background: repeating-linear-gradient(90deg, transparent 0 14px, rgba(242, 239, 233, 0.16) 14px 26px);
+  background: repeating-linear-gradient(90deg, transparent 0 14px, color-mix(in srgb, var(--ink) 16%, transparent) 14px 26px);
   background-size: 26px 10px;
   background-repeat: repeat-x;
   background-position: 0 center;
@@ -765,7 +768,7 @@ img {
   color: var(--bg);
 }
 .btn--x:hover {
-  background: #fff;
+  background: color-mix(in srgb, var(--ink) 85%, var(--accent));
 }
 
 /* ---------- Band between videos and films ---------- */
@@ -834,7 +837,7 @@ img {
   border-radius: 2px;
 }
 .media--large {
-  box-shadow: 0 40px 120px -40px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 40px 120px -40px var(--shadow-deep);
 }
 .feature__meta .links {
   margin: 0;
@@ -1241,5 +1244,47 @@ img {
   .nav a[href$="#work"],
   .nav a[href$="#films"] {
     display: none;
+  }
+}
+
+/* ==========================================================================
+   Light theme: follows the device's light/dark setting
+   ========================================================================== */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f4f1ea;
+    --bg-2: #e8e4da;
+    --ink: #151413;
+    --ink-2: #4f4c47;
+    --ink-3: #7d7972;
+    --line: rgba(21, 20, 19, 0.14);
+    --accent: #d93a0b;
+    --accent-ink: #ffffff;
+    --head-bg: rgba(244, 241, 234, 0.82);
+    --grain: 0.08;
+    --shadow-deep: rgba(40, 30, 20, 0.28);
+    color-scheme: light;
+  }
+  body::after {
+    mix-blend-mode: multiply;
+  }
+  .band {
+    background:
+      radial-gradient(60% 120% at 85% 110%, rgba(255, 0, 51, 0.1), transparent 60%),
+      radial-gradient(50% 100% at 0% 0%, rgba(217, 58, 11, 0.08), transparent 60%),
+      var(--bg-2);
+  }
+  .empty {
+    background:
+      repeating-linear-gradient(90deg, transparent 0 46px, rgba(21, 20, 19, 0.04) 46px 48px),
+      radial-gradient(80% 120% at 50% 120%, rgba(217, 58, 11, 0.12), transparent 60%),
+      var(--bg-2);
+  }
+  .btn--yt {
+    box-shadow: 0 8px 24px -12px rgba(255, 0, 51, 0.6);
+  }
+  .media {
+    background: #1a1918;
   }
 }
