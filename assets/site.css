@@ -16,9 +16,10 @@
   --accent-ink: #0a0a0b;
   --radius: 4px;
   --gutter: clamp(16px, 4vw, 56px);
-  --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
-  --sans: "Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --display: "Archivo", "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
+  --italic: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --sans: "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Archivo", ui-sans-serif, system-ui, sans-serif;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   color-scheme: dark;
 }
@@ -111,7 +112,7 @@ img {
 .wordmark {
   display: inline-flex;
   gap: 0.3em;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -177,7 +178,7 @@ img {
 
 .hero__title {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(48px, 7.4vw, 124px);
   line-height: 0.92;
@@ -298,7 +299,7 @@ img {
     linear-gradient(160deg, #19191c, #0b0b0c);
 }
 .poster-gen span {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-style: italic;
   font-weight: 300;
   font-size: clamp(28px, 4.5vw, 64px);
@@ -323,7 +324,7 @@ img {
 }
 .feature__title {
   margin: 4px 0 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: clamp(24px, 2.4vw, 34px);
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -350,7 +351,7 @@ img {
 }
 .reel__title {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(36px, 5vw, 72px);
   letter-spacing: -0.03em;
@@ -412,7 +413,7 @@ img {
 
 .card__title {
   margin: 6px 0 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(26px, 2.6vw, 40px);
   line-height: 1.05;
@@ -518,7 +519,7 @@ img {
 }
 .empty__title {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-style: italic;
   font-weight: 300;
   font-size: clamp(32px, 5vw, 64px);
@@ -556,7 +557,7 @@ img {
 }
 .about__title {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(36px, 5vw, 72px);
   letter-spacing: -0.03em;
@@ -564,7 +565,7 @@ img {
 }
 .about__body p {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: clamp(20px, 2vw, 28px);
   font-weight: 300;
   line-height: 1.35;
@@ -805,7 +806,7 @@ img {
 }
 .band__title {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(40px, 6.4vw, 104px);
   line-height: 0.95;
@@ -999,7 +1000,7 @@ img {
 }
 .stage__title {
   margin: 8px 0 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(34px, 3.6vw, 60px);
   line-height: 1;
@@ -1103,7 +1104,7 @@ img {
 .thumb__title {
   display: block;
   margin-top: 4px;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 19px;
   line-height: 1.15;
   letter-spacing: -0.015em;
@@ -1155,7 +1156,7 @@ img {
 }
 .statement__title {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(48px, 8vw, 140px);
   line-height: 0.92;
@@ -1183,7 +1184,7 @@ img {
 }
 .prose p {
   margin: 0 0 1.1em;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 300;
   font-size: clamp(20px, 1.9vw, 27px);
   line-height: 1.45;
@@ -1201,7 +1202,7 @@ img {
 }
 .signature {
   margin-top: 28px;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-style: italic;
   font-size: 28px;
 }
@@ -1287,4 +1288,128 @@ img {
   .media {
     background: #1a1918;
   }
+}
+
+/* ==========================================================================
+   Typography: condensed poster titling (Archivo at 62% width) set against
+   Instrument Serif italics, like a film credit block.
+   ========================================================================== */
+
+.hero__title,
+.reel__title,
+.band__title,
+.about__title,
+.statement__title,
+.stage__title,
+.card__title,
+.thumb__title,
+.feature__title,
+.wordmark {
+  font-family: var(--display);
+  font-stretch: 62%;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  font-variation-settings: normal;
+}
+.hero__title,
+.statement__title,
+.band__title {
+  line-height: 0.86;
+}
+.intro .hero__title {
+  font-size: clamp(56px, 8.4vw, 150px);
+  max-width: none;
+}
+.statement__title {
+  font-size: clamp(60px, 10vw, 180px);
+}
+.reel__title,
+.about__title {
+  font-size: clamp(44px, 6vw, 96px);
+  line-height: 0.9;
+}
+.stage__title {
+  font-size: clamp(40px, 4.4vw, 72px);
+  line-height: 0.9;
+}
+.card__title {
+  font-size: clamp(30px, 3vw, 46px);
+  line-height: 0.92;
+}
+.thumb__title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Serif italic accents */
+.hero__title em,
+.band__title em,
+.statement__title em,
+.wordmark span:last-child,
+.poster-gen span,
+.empty__title,
+.signature {
+  font-family: var(--italic);
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.02em;
+}
+.hero__title em,
+.band__title em,
+.statement__title em {
+  display: inline-block;
+  font-size: 1.04em;
+  line-height: 0.9;
+}
+.wordmark {
+  font-size: 24px;
+  align-items: baseline;
+}
+.wordmark span:last-child {
+  font-size: 1.12em;
+}
+
+/* Reading text */
+.prose p,
+.about__body p {
+  font-family: var(--sans);
+  font-stretch: 100%;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.prose p {
+  font-size: clamp(19px, 1.7vw, 24px);
+  line-height: 1.5;
+}
+
+/* Labels */
+.mono,
+.nav a,
+.eyebrow,
+.social a,
+.play-badge,
+.band__marquee {
+  font-family: var(--mono);
+  font-stretch: 87.5%;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+/* Controls over video stay light in both themes */
+.media__play,
+.play-badge,
+.media__runtime,
+.media__soon {
+  color: #f2efe9;
+}
+.prose--plain p {
+  font-size: clamp(16px, 1.3vw, 18px);
+  color: var(--ink-2);
+}
+.signature {
+  font-size: 34px;
 }
