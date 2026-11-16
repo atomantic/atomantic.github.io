@@ -51,7 +51,13 @@ python3 -m http.server 8000
 Then open http://localhost:8000 (the catalog is loaded with `fetch`, so opening the file
 directly won't work).
 
+## Deploy
+
+GitHub Pages serves the `public` branch. The `Deploy to GitHub Pages` workflow copies `dev`
+onto `public` on every push to `dev`, so merging a pull request into `dev` publishes it. You can
+also run the workflow by hand from the Actions tab.
+
 ## Classic portfolio
 
-The previous Reveal.js portfolio is at `classic.html`; its sources (`templates/`, `slides/`,
-`Gruntfile.js`) are unchanged.
+The previous Reveal.js portfolio is kept as a static page at `classic.html`, which still loads
+its sections from `slides/`. The Grunt build that generated it has been removed.

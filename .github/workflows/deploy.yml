@@ -1,0 +1,37 @@
+# Publishes the site whenever dev changes.
+# GitHub Pages serves the `public` branch, and the site has no build step,
+# so each deploy is a commit on `public` whose files match `dev` exactly.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [dev]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-public
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Commit dev's files onto public
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin public
+          tree=$(git rev-parse "HEAD^{tree}")
+          if [ "$tree" = "$(git rev-parse "origin/public^{tree}")" ]; then
+            echo "public already matches dev"
+            exit 0
+          fi
+          commit=$(git commit-tree "$tree" -p origin/public -m "Built from ${GITHUB_SHA::7} on branch dev")
+          git push origin "$commit:refs/heads/public"
