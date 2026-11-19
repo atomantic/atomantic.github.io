@@ -11,6 +11,21 @@
   },
   "videos": [
     {
+      "slug": "night-beats",
+      "type": "music-video",
+      "title": "Night Beats",
+      "year": 2026,
+      "date": "2026-11-19",
+      "description": "One roll of film from one night, and the one frame on it she didn't take.",
+      "youtube": "OG0PXKUJIE8",
+      "featured": true,
+      "links": {
+        "youtube": "https://youtu.be/OG0PXKUJIE8",
+        "x": "https://x.com/antic/status/2123329323860144451",
+        "suno": "https://suno.com/song/d9008805-788d-4931-ac73-13e31300b5d5"
+      }
+    },
+    {
       "slug": "dream-tape",
       "type": "music-video",
       "title": "Dream Tape",
@@ -18,7 +33,6 @@
       "date": "2026-11-14",
       "description": "The more I create, the better dreams I have.",
       "youtube": "l4O27yxXgek",
-      "featured": true,
       "links": {
         "youtube": "https://youtu.be/l4O27yxXgek",
         "x": "https://x.com/antic/status/2121489459573309612"
